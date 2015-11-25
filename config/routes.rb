@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'mortgage_calculator/', to: 'mortgage_calculators#edit'
+
+	post 'mortgage_calculator/', to: 'mortgage_calculators#update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
