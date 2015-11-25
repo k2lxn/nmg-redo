@@ -1,8 +1,19 @@
 <h1>Mortgage Calculator</h1>
 
-<%= form_for @mrtg_calc do |f| %>
+<%= form_for @mrtg_calc, url: { controller: "mortgage_calculators", action: "update" },
+												method: :post do |f| %>
 
 	<%= f.label :loan_amt, "Loan amount" %>
 	<%= f.text_field :loan_amt %>
+	
+	<%= f.label :rate, "Interest rate" %>
+	<%= f.select :rate, options_for_select(select_options("rate")) %>
+	
+	<%= f.label :term %>
+	<%= f.select :term, options_for_select(select_options("term")) %>
+	
+	<%= f.submit "Calculate" %>
 
 <%end%>
+
+<%= debug(params) if Rails.env.development? %>
