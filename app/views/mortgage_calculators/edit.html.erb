@@ -7,13 +7,24 @@
 	<%= f.text_field :loan_amt %>
 	
 	<%= f.label :rate, "Interest rate" %>
-	<%= f.select :rate, options_for_select(select_options("rate")) %>
+	<% rate = @mrtg_calc.rate.to_s %>
+	<%= f.select :rate, options_for_select(select_options("rate"), selected: rate) %>
 	
 	<%= f.label :term %>
-	<%= f.select :term, options_for_select(select_options("term")) %>
+	<% term = @mrtg_calc[:term].to_s %>
+	<%= f.select :term, options_for_select(select_options("term"), selected: term) %>
 	
 	<%= f.submit "Calculate" %>
 
 <%end%>
+
+<h4>Monthly payment</h4>
+<%= @result[:monthly] %>
+
+<h4>Total payments</h4>
+<%= @result[:total] %>
+
+<h4>Total interest</h4>
+<%= @result[:interest] %>
 
 <%= debug(params) if Rails.env.development? %>
