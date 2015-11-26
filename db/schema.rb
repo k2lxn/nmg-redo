@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125045204) do
+ActiveRecord::Schema.define(version: 20151126173855) do
+
+  create_table "borrowers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "credit_score"
+    t.string   "email"
+    t.string   "phone"
+    t.decimal  "income"
+    t.decimal  "monthly_debt"
+    t.string   "employer"
+    t.date     "employed_since"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "mortgage_calculators", force: :cascade do |t|
     t.decimal  "loan_amt"

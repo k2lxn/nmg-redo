@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-MortgageCalculator.create(loan_amt: 500000, rate: 4.25, term: 15)
+MortgageCalculator.create(loan_amt: 500000, rate: 4.25, term: 15.0)
