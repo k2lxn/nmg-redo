@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'borrowers/new'
+
+  get 'borrowers/create'
+
   get 'mortgage_calculator/', to: 'mortgage_calculators#edit'
 
 	post 'mortgage_calculator/', to: 'mortgage_calculators#update'
