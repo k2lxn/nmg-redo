@@ -1,0 +1,100 @@
+<h1>Apply for a Free Quote</h1>
+
+<%= form_for @borrower, url: { controller: "borrowers", action: "new" } do |f| %>
+
+	
+	<fieldset>
+		<legend>Home information</legend>
+		
+		<%= f.fields_for :application do |ff| %>
+			<%= ff.label :loan_purpose %>
+			<%= ff.text_field :loan_purpose %>
+		
+			<%= ff.label :property_type %>
+			<%= ff.text_field :property_type %>
+		
+			<%= ff.label :purchase_price %>
+			<%= ff.text_field :purchase_price %>
+		
+			<%= ff.label :budget %>
+			<%= ff.text_field :budget %>
+		
+			<%= ff.label :zip_code %>
+			<%= ff.text_field :zip_code %>
+		<%end%>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Borrower information</legend>
+		
+		<%= f.label :first_name %>
+		<%= f.text_field :first_name %>
+		
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name %>
+		
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+		
+		<%= f.fields_for :address do |ff| %>
+			<%= ff.label :street_1 %>
+			<%= ff.text_field :street_1 %>
+			
+			<%= ff.label :city %>
+			<%= ff.text_field :city %>
+			
+			<%= ff.label :state %>
+			<%= ff.text_field :state %>
+			
+			<%= ff.label :zip_code %>
+			<%= ff.text_field :zip_code %>
+		<%end%>
+		
+		<%= f.label :credit_score %>
+		<%= f.text_field :credit_score %>
+		
+		<%= f.label :income %>
+		<%= f.text_field :income %>
+		
+		<%= f.label :monthly_debt %>
+		<%= f.text_field :monthly_debt %>
+		
+		<%= f.label :employer %>
+		<%= f.text_field :employer %>
+		
+		<%= f.label :employed_since %>
+		<%= f.text_field :employed_since %>		
+	</fieldset>
+	
+	
+	<fieldset>
+		<legend>Co-Borrower information (optional)</legend>
+		<h3>My co-borrower will be ...</h3>
+		
+		<%= fields_for :coborrower do |ff| %>
+			<%= ff.radio_button :spouse, nil %>
+			<%= ff.label :spouse_nil, "No co-borrower" %>
+			
+			<%= ff.radio_button :spouse, 1 %>
+			<%= ff.label :spouse_1, "spouse" %>
+			
+			<%= ff.radio_button :spouse, 0 %>
+			<%= ff.label :spouse_0, "other" %>	
+			
+			<%= ff.label :first_name %>	
+			<%= ff.text_field :first_name %>	
+			
+			<%= ff.label :last_name %>	
+			<%= ff.text_field :last_name %>	
+			
+			<%= ff.label :credit_score %>	
+			<%= ff.text_field :credit_score %>	
+		<%end%>		
+	</fieldset>
+	
+	<%= f.submit "Submit" %>
+	
+<%end%>
+
+<!-- DEBUG --> 
+<%= debug(params) %>
