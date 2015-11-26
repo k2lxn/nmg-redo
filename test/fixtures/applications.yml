@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  loan_purpose: MyString
+  property_type: MyString
+  purchase_price: 9.99
+  budget: 9.99
+  borrower_id: 1
+
+two:
+  loan_purpose: MyString
+  property_type: MyString
+  purchase_price: 9.99
+  budget: 9.99
+  borrower_id: 1
