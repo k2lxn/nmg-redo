@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spouse: false
+  first_name: MyString
+  last_name: MyString
+  credit_score: 1
+  borrower_id: 1
+
+two:
+  spouse: false
+  first_name: MyString
+  last_name: MyString
+  credit_score: 1
+  borrower_id: 1
