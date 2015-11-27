@@ -8,10 +8,10 @@
 		
 		<%= f.fields_for :application do |ff| %>
 			<%= ff.label :loan_purpose %>
-			<%= ff.text_field :loan_purpose %>
+			<%= ff.select :loan_purpose, options_for_select(@loan_purpose_options) %>
 		
 			<%= ff.label :property_type %>
-			<%= ff.text_field :property_type %>
+			<%= ff.select :property_type, options_for_select(@property_type_options) %>
 		
 			<%= ff.label :purchase_price %>
 			<%= ff.text_field :purchase_price %>
@@ -44,14 +44,14 @@
 			<%= ff.text_field :city %>
 			
 			<%= ff.label :state %>
-			<%= ff.text_field :state %>
+			<%= ff.select :state, options_for_select(@state_abbrev) %>
 			
 			<%= ff.label :zip_code %>
 			<%= ff.text_field :zip_code %>
 		<%end%>
 		
 		<%= f.label :credit_score %>
-		<%= f.text_field :credit_score %>
+		<%= f.select :credit_score, options_for_select(@credit_score_options) %>
 		
 		<%= f.label :income %>
 		<%= f.text_field :income %>
@@ -88,7 +88,7 @@
 			<%= ff.text_field :last_name %>	
 			
 			<%= ff.label :credit_score %>	
-			<%= ff.text_field :credit_score %>	
+			<%= ff.select :credit_score, options_for_select(@credit_score_options) %>	
 		<%end%>		
 	</fieldset>
 	
@@ -97,4 +97,11 @@
 <%end%>
 
 <!-- DEBUG --> 
+
 <%= debug(params) %>
+
+
+
+
+
+
