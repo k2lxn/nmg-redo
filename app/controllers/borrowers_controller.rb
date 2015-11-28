@@ -16,10 +16,28 @@ class BorrowersController < ApplicationController
   end
 
   def create
+  	@borrower = Borrower.new(borrower_params)
+  	#@borrower = Borrower.new
+  	if @borrower.save 
+  		# handle successful save
+  	else
+  		render 'new'
+  	end		
   end
   
   private 
   
+  	def borrower_params
+  		params.require(:borrower).permit(:first_name,:last_name,:email,:credit_score,
+  																		:income,:monthly_debt,:employer,:employed_since,
+  																		application_attributes: [:loan_purpose, 
+  																		:property_type,:purchase_price,:budget,:zip_code],
+  																		address_attributes: [:street_1,:city,:state,
+  																		:zip_code],
+  																		coborrower_attributes: [:spouse,:first_name,
+  																		:last_name,:credit_score] )
+  	end
+  	
   	def credit_categories
 			scores = [["740+", 0]]
 			(580..720).step(20).to_a.each do |num|
