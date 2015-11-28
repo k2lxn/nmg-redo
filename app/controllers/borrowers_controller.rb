@@ -39,7 +39,7 @@ class BorrowersController < ApplicationController
   	end
   	
   	def credit_categories
-			scores = [["740+", 0]]
+			scores = [["740+", 740]]
 			(580..720).step(20).to_a.each do |num|
 				display = "#{num.to_s} - #{(num + 19).to_s}"
 				scores.insert(1,[display, num]) 
