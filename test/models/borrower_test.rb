@@ -70,6 +70,13 @@ class BorrowerTest < ActiveSupport::TestCase
     end
   end
   
+  test "email addresses should be unique" do
+  	duplicate_borrower = @borrower.dup
+  	duplicate_borrower.email = @borrower.email.upcase
+  	@borrower.save
+  	assert_not duplicate_borrower.valid?
+  end
+  
   test "credit score should be numerical" do
   	@borrower.credit_score = "/730"
   	assert_not @borrower.valid?, "#{@borrower.credit_score} should be invalid"
