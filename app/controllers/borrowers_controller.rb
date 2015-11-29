@@ -6,21 +6,22 @@ class BorrowersController < ApplicationController
   	@borrower.coborrower = Coborrower.new
   	
   	# Select dropdown options
-  	@loan_purpose_options = [["Purchase", "purchase"], ["Refinance", "refinance"]]
-  	@property_type_options = [["Primary residence", "primary"], 
-  														["Second/Vacation home", "secondary"], 
-  														["Investment property", "investment"]]
-  	#@credit_score_options = ["740+", 740], ["720 - 739", 720], ["700 - 719", 700]													 
+  	@loan_purpose_options = loan_purpose_options
+  	@property_type_options = property_type_options
   	@credit_score_options = credit_categories
   	@state_abbrev = state_abbreviations
   end
 
   def create
   	@borrower = Borrower.new(borrower_params)
-  	#@borrower = Borrower.new
   	if @borrower.save 
-  		# handle successful save
+  		redirect_to '/confirm' 
   	else
+  		@loan_purpose_options = loan_purpose_options
+  		@property_type_options = property_type_options
+  		@credit_score_options = credit_categories
+  		@state_abbrev = state_abbreviations
+  		
   		render 'new'
   	end		
   end
@@ -36,6 +37,15 @@ class BorrowersController < ApplicationController
   																		:zip_code],
   																		coborrower_attributes: [:spouse,:first_name,
   																		:last_name,:credit_score] )
+  	end
+  	
+  	def loan_purpose_options
+  		[["Purchase", "purchase"], ["Refinance", "refinance"]]
+  	end
+  	
+  	def property_type_options
+  		[["Primary residence", "primary"], ["Second/Vacation home", "secondary"], 
+  		["Investment property", "investment"]]
   	end
   	
   	def credit_categories

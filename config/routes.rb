@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-	get 'borrowers/new'
 	
-	#post 'borrowers/new'  # DEV ONLY - for debuging Apply form
+	get '/apply', to: "borrowers#new"
 	
-	post 'borrowers/create'  # DEV ONLY
+	post '/apply', to: "borrowers#create"
+	
+	get '/confirm', to: "static_pages#confirm"
 	
   get 'mortgage_calculator/', to: 'mortgage_calculators#edit'
 
