@@ -1,7 +1,8 @@
 <h1>Apply for a Free Quote</h1>
 
 <%= form_for @borrower, url: '/apply', method: :post do |f| %>
-
+	
+	<%= render 'shared/error_messages' %>
 	
 	<fieldset>
 		<legend>Home information</legend>
