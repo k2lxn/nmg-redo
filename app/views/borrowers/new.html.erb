@@ -134,9 +134,9 @@
 		<h3>My co-borrower will be ...</h3>
 		
 		<%= fields_for :coborrower do |ff| %>
-			<div class="row">
+			<div class="row radio-row">
 				<div class="col-1-3">
-					<%= ff.radio_button :spouse, nil %>
+					<%= ff.radio_button :spouse, "nil", checked: true %>
 					<%= ff.label :spouse_nil, "No co-borrower", class: "radio-label" %>				
 				</div>
 				
@@ -172,7 +172,7 @@
 		<%end%>		
 	</fieldset>
 	
-	<%= f.submit "Submit" %>
+	<%= f.submit "Submit", class: "button-style" %>
 	
 <%end%>
 
