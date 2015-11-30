@@ -1,0 +1,55 @@
+/* mixins, variables, etc */
+$dark-grey: #555;
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+
+/* global */
+html, body, div, p {
+	position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+
+
+/* typography */
+
+@import url("//fonts.googleapis.com/css?family=Lato:400,700");
+@import url("//fonts.googleapis.com/css?family=Quicksand:300,400");
+
+@font-face {
+  font-family: 'Sofia Pro Light';
+  src: font-url('SofiaProLight-webfont.eot');
+  src: font-url('SofiaProLight-webfont.woff2') format("woff2"), 	
+  font-url('SofiaProLight-webfont.woff') format("woff"), 
+  font-url('SofiaProLight-webfont.ttf') format("truetype"); 
+}
+
+$px-16: 0.85em;
+$px-20: 1.25em;
+$px-24: 1.5em;
+$px-30: 1.88em;
+
+$body-font-family: Lato, Arial, sans-serif;
+$header-font-family: 'Sofia Pro Light', Quicksand, sans-serif;
+
+body {
+	font-family: $body-font-family; 
+}
+
+h1, h2, h3 {
+	font-family: $header-font-family;
+}
+
+fieldset legend {
+	font-family: $header-font-family;
+}
