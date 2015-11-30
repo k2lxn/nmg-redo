@@ -4,6 +4,7 @@ class BorrowersControllerTest < ActionController::TestCase
   test "should get new" do
     get :new
     assert_response :success
+    assert_select "title", "Apply | Nationwide Mortgage"
   end
 
  # test "should get create" do
