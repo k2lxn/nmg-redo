@@ -29,7 +29,7 @@ class BorrowersController < ApplicationController
   private 
   
   	def borrower_params
-  		params.require(:borrower).permit(:first_name,:last_name,:email,:credit_score,
+  		params.require(:borrower).permit(:first_name,:last_name,:email,:phone,:credit_score,
   																		:income,:monthly_debt,:employer,:employed_since,
   																		application_attributes: [:loan_purpose, 
   																		:property_type,:purchase_price,:budget,:zip_code],

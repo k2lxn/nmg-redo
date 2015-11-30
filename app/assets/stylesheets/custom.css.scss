@@ -1,4 +1,7 @@
 /* mixins, variables, etc */
+$accent-color: #F16404;
+$light-grey: #EEE;
+$medium-grey: #AAA;
 $dark-grey: #555;
 
 @mixin border-radius($radius) {
@@ -7,19 +10,6 @@ $dark-grey: #555;
 	-ms-border-radius: $radius;
 	border-radius: $radius;
 }
-
-
-/* global */
-html, body, div, p {
-	position: relative;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-
 
 /* typography */
 
@@ -50,6 +40,125 @@ h1, h2, h3 {
 	font-family: $header-font-family;
 }
 
+h1 {
+	font-size: $px-30;
+}
+
 fieldset legend {
 	font-family: $header-font-family;
+	font-size: $px-20;
+	color: $medium-grey;
 }
+
+form label {
+	font-size: $px-16;
+}
+.form-label {
+	font-size: $px-16;
+}
+
+
+
+/* global */
+$base-line-height: 1.33em;
+$global-padding: $base-line-height/2;
+
+html, body, div, form, p {
+	position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.center-wrap {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.accent-border {
+	width: 100%;
+	display: block;
+	border-bottom: 3px dotted $accent-color;
+	margin-bottom: $base-line-height;
+}
+
+
+/* layout */
+body {
+	text-align: center;
+}
+
+.col-1-2, .col-2-2, .col-1-3, .col-2-3, .col-1-8 {
+	padding: 0 $global-padding;
+	float: left;
+}
+
+.col-1-2 {
+	width: 50%;
+}
+
+.col-2-2 {
+	width: 100%;
+}
+
+.col-1-3 {
+	width: 33%;
+}
+
+.col-2-3 {
+	width: 66%;
+}
+
+.col-1-8 {
+	width: 12.5%;
+}
+
+
+/* forms */
+input, select {
+	width: 100%;
+	height: ($base-line-height * 2);
+	margin-bottom: $base-line-height;
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+}
+
+fieldset legend {
+	text-align: left;
+	margin: 0 0 $global-padding 0;
+	padding: 0;
+}
+
+form label {
+	display: block;
+	text-align: left;
+}
+
+.radio-label {
+	display: inline;
+}
+
+.form-label {
+	clear: left;
+	display: block;
+	text-align: left;
+	padding: 0 $global-padding;
+}
+
+form h3 {
+	clear: left;
+	margin: $global-padding 0;
+	padding: 0 $global-padding;
+	font-size: 1em;
+	text-align: left;
+}
+
+input[type="radio"] {
+	width: fit-content;
+}
+
