@@ -1,0 +1,19 @@
+<nav>
+  <div class='center-wrap'>
+    
+    <% if yield(:title).empty? %>
+    	<%= link_to image_tag("logo_color.png", alt: "Nationwide Mortgage Group"), 
+    			root_path, class: "hidden" %>
+    <%else%>
+    	<%= link_to image_tag("logo_color.png", alt: "Nationwide Mortgage Group"), 
+    			root_path %>
+    <%end%>
+    
+    <a href="#" id="menu_icon">&nbsp;</a>
+    <ul>
+    	<li><%= link_to "Apply", apply_path %></li>
+      <li><%= link_to "Tools", "#" %></li>
+      <li><%= link_to "About", about_path %></li>
+    </ul>  
+  </div>
+</nav>
