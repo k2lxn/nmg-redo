@@ -117,8 +117,6 @@ body {
 	visibility: hidden;
 }
 
-
-
 .accent-border {
 	width: 100%;
 	display: block;
@@ -314,7 +312,6 @@ input[type="radio"] + label:before {
 input[type="radio"]:checked + label:before {
 	background-color: $secondary-accent-color;
 }
-
 
 
 
