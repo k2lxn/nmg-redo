@@ -205,15 +205,15 @@ header {
 }
 
 #menu-icon {
-  width: 3.2em;
-  height: 3em;
+  width: 2.5em;
+  height: 2em;
   position: absolute;
   top: 0; right: 0;
   margin-top: $global-padding;
   
   .bar {
-  	height: 0.5em;
-  	margin-bottom: 0.5em;
+  	height: 0.45em;
+  	margin-bottom: 0.25em;
   	background: $primary-color;
 		@include border-radius(0.2em); 
   } 
@@ -361,6 +361,7 @@ input[type="radio"]:checked + label:before {
 			width: 100%;
 			display: block;
 			padding: $global-padding 0;
+			background: #FFF;
 			border-bottom: 2px solid $secondary-color;
 		}
 		nav ul li a {

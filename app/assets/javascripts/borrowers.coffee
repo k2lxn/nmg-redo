@@ -6,16 +6,17 @@ sm_breakpoint = 640
 
 $(document).on "page:change", ->
 	menu = $('header ul')
+		
+	menu.toggle()
 	
 	# Toggle nav when menu icon clicked	
-	$('#menu-icon').click (e) ->
-		e.preventDefault();
-		menu.slideToggle("fast");
+	$('#menu-icon').click ->
+		menu.slideToggle("fast")
 	
 	# Pull menu up after user chooses (taps) a link 
 	if $(window).width() <= sm_breakpoint
 	 	$('header ul li a').click ->
-			menu.delay(300).slideToggle("fast");
+			menu.delay(300).slideToggle("fast")
 
 	
 # Show nav ul in browser if page resized
