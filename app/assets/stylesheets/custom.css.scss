@@ -164,16 +164,17 @@ body {
 
 nav {
 	ul {
+		display: none;
 		list-style: none;
-  	display: inline-block;
   	margin: 10px 0;
  		padding: 0;
   	height: fit-content; 
 	}
 	
 	ul li {
-  		display: inline-block;
-  	} 
+  	//display: inline-block;
+  	display: none;
+  } 
 }
 
 
@@ -349,7 +350,7 @@ input[type="radio"]:checked + label:before {
 	
 	header {
 		nav ul, nav:active ul{
-			//display: none;
+			display: none;
 			width: 111%;
 			margin: 0 -6%;
 			text-align: center;
@@ -377,6 +378,9 @@ input[type="radio"]:checked + label:before {
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
 	
 	header {
+		nav ul {
+			display: inline-block;
+		}
 		nav ul li {
 			margin-left: 50px;
 		}
@@ -391,6 +395,9 @@ input[type="radio"]:checked + label:before {
 @media only screen and (min-width: 64.063em) {
 	
 	header {
+		nav ul {
+			display: inline-block;
+		}
 		nav ul li {
 			margin-left: 50px;
 		}
