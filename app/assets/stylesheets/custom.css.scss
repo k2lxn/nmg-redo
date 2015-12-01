@@ -372,6 +372,14 @@ input[type="radio"]:checked + label:before {
 	}
 }
 
+// Older Phone screens, portrait (extra small)
+@media only screen and (max-width: 376px) {
+	h1 {
+		font-size: $px-24;
+	}
+}
+
+
 // Medium screens, 641px - 1024px
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
 	
