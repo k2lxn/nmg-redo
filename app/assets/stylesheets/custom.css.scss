@@ -41,8 +41,9 @@ body {
 	font-family: $body-font-family; 
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	font-family: $header-font-family;
+	font-weight: normal;
 }
 
 h1 {
@@ -199,19 +200,22 @@ header {
   		bottom: 0;
   		right: 0;
 		}
-		
-		ul li {
-			margin-left: 50px;
-		}		
 	}
 }
 
-#menu_icon {
-  width: 30px;
-  height: 30px;
-  display: none;   /* only visible for devices */
-  background: url("img/menu_icon.png") no-repeat;
-  background-size: contain; 
+#menu-icon {
+  width: 3.2em;
+  height: 3em;
+  position: absolute;
+  top: 0; right: 0;
+  margin-top: $global-padding;
+  
+  .bar {
+  	height: 0.5em;
+  	margin-bottom: 0.5em;
+  	background: $primary-color;
+		@include border-radius(0.2em); 
+  } 
 }
 
 /* footer */
@@ -342,16 +346,59 @@ input[type="radio"]:checked + label:before {
 
 // Small screens, 640px
 @media only screen and (max-width: 40em) {  
-
+	
+	header {
+		nav ul, nav:active ul{
+			//display: none;
+			width: 111%;
+			margin: 0 -6%;
+			text-align: center;
+			top: $nav-height;
+			background: #FFF;
+		}
+		nav ul li {
+			width: 100%;
+			display: block;
+			padding: $global-padding 0;
+			border-bottom: 2px solid $secondary-color;
+		}
+		nav ul li a {
+			font-size: $px-20;
+		}
+	}
+	
+	#menu-icon {
+		display: inline-block;
+		z-index: 11;
+	}
 }
 
 // Medium screens, 641px - 1024px
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+	
+	header {
+		nav ul li {
+			margin-left: 50px;
+		}
+		
+		#menu-icon {
+			display: none;
+		}
+	}
 }
 
 // Large screens, 1025px
 @media only screen and (min-width: 64.063em) {
-
+	
+	header {
+		nav ul li {
+			margin-left: 50px;
+		}
+		
+		#menu-icon {
+			display: none;
+		}
+	}
 }
 
 
