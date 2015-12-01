@@ -6,8 +6,8 @@ sm_breakpoint = 640
 
 $(document).on "page:change", ->
 	menu = $('header ul')
-		
-	menu.toggle()
+	
+	#menu.toggle()
 	
 	# Toggle nav when menu icon clicked	
 	$('#menu-icon').click ->

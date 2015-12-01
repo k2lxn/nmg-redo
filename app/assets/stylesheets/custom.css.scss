@@ -164,7 +164,6 @@ body {
 
 nav {
 	ul {
-		display: none;
 		list-style: none;
   	margin: 10px 0;
  		padding: 0;
@@ -172,8 +171,7 @@ nav {
 	}
 	
 	ul li {
-  	//display: inline-block;
-  	display: none;
+  	display: inline-block;
   } 
 }
 
@@ -350,7 +348,6 @@ input[type="radio"]:checked + label:before {
 	
 	header {
 		nav ul, nav:active ul{
-			display: none;
 			width: 111%;
 			margin: 0 -6%;
 			text-align: center;
