@@ -117,30 +117,7 @@ body {
 	visibility: hidden;
 }
 
-.col-1-2, .col-2-2, .col-1-3, .col-2-3, .col-1-8 {
-	padding: 0 $global-padding;
-	float: left;
-}
 
-.col-1-2 {
-	width: 50%;
-}
-
-.col-2-2 {
-	width: 100%;
-}
-
-.col-1-3 {
-	width: 33%;
-}
-
-.col-2-3 {
-	width: 66%;
-}
-
-.col-1-8 {
-	width: 12.5%;
-}
 
 .accent-border {
 	width: 100%;
@@ -345,11 +322,16 @@ input[type="radio"]:checked + label:before {
 
 // Small screens, 640px
 @media only screen and (max-width: 40em) {  
+	.center-wrap {
+		max-width: 25em;
+	}
 	
 	header {
 		nav ul, nav:active ul{
 			width: 111%;
-			margin: 0 -6%;
+			//margin: 0 -6%;
+			margin: 0;
+			padding: 0;
 			text-align: center;
 			top: $nav-height;
 			background: #FFF;
@@ -379,9 +361,32 @@ input[type="radio"]:checked + label:before {
 	}
 }
 
-
 // Medium screens, 641px - 1024px
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+@media only screen and (min-width: 40.063em) {
+	.col-1-2, .col-2-2, .col-1-3, .col-2-3, .col-1-8 {
+		padding: 0 $global-padding;
+		float: left;
+	}
+
+	.col-1-2 {
+		width: 50%;
+	}
+
+	.col-2-2 {
+		width: 100%;
+	}
+
+	.col-1-3 {
+		width: 33%;
+	}
+
+	.col-2-3 {
+		width: 66%;
+	}
+
+	.col-1-8 {
+		width: 12.5%;
+	}
 	
 	header {
 		nav ul {
@@ -397,21 +402,14 @@ input[type="radio"]:checked + label:before {
 	}
 }
 
+// Medium screens only, 641px - 1024px
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+	
+}
+
 // Large screens, 1025px
 @media only screen and (min-width: 64.063em) {
-	
-	header {
-		nav ul {
-			display: inline-block;
-		}
-		nav ul li {
-			margin-left: 50px;
-		}
-		
-		#menu-icon {
-			display: none;
-		}
-	}
+
 }
 
 
