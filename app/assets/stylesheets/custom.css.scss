@@ -3,6 +3,7 @@ $primary-color: #1575E7;
 $secondary-color: #03CB69;
 $accent-color: #F16404;
 $secondary-accent-color: #B904DC;
+$focus-highlight: #225577;
 $light-grey: #EEE;
 $medium-grey: #AAA;
 $dark-grey: #555;
@@ -350,7 +351,7 @@ input[type="radio"]:checked + label:before {
 
 .select.active, .select:focus {
 	outline: none;
-	box-shadow: 0 0 3px 1px $secondary-color;
+	box-shadow: 0 0 3px 1px $focus-highlight;
 }
 
 .select .value {
@@ -382,6 +383,10 @@ input[type="radio"]:checked + label:before {
 .select .option {
 	padding: 0.5em 0;
 	border-bottom: 2px solid #FFF;
+}
+
+.select .highlight {
+	background: $secondary-color;
 }
 
 .select .opt-list.hidden {

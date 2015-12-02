@@ -36,9 +36,34 @@ $(document).on "page:change", ->
 		$(this).find('.opt-list').toggleClass('hidden')
 		
 	# Highlight select options on mouseover	
-	$('.select').on 'mouseover', (event) =>
-		options = $('select').find('.opt-list').children()
-		for opt in options
+	$('.option').hover(
+		-> $(this).addClass('highlight')
+		-> $(this).removeClass('highlight')
+	)
+	
+	# Show focus
+	$('.select').focus(
+		-> $(this).addClass('active')
+	)
+	
+	# Unfocus
+	$('.select').focusout(
+		-> $(this).removeClass('active')
+	)
+	
+	# Update select value (in native and custom widget)
+	$('.option').click ->
+		# Set selected value in native widget
+		options = $(this).parent().children()	
+		index = options.index(this)
+		native_widget = $(this).parents('.select').prev()
+		native_widget.prop("selectedIndex", index)
+		
+		# Set displayed value on custom widget
+		value = $(this).parents('.select').children('span')
+		value.html($(this).html())
+	
+	
 	
 # Show nav ul in browser if page resized
 $(window).resize ->
