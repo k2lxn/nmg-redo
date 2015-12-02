@@ -32,7 +32,7 @@ $(document).on "page:change", ->
 	$('body').addClass('widget')
 	
 	# On-click to toggle select widget dropdown
-	$('.select').on 'click', (event) =>
+	$('.select').click ->
 		$(this).find('.opt-list').toggleClass('hidden')
 		
 	# Highlight select options on mouseover	
