@@ -1,0 +1,10 @@
+
+
+<div class="select" tabindex=tabindex>
+	<span class="value"><%= options_list[0][0] %></span>
+	<ul class="opt-list hidden">
+	<% options_list.each do |opt| %>
+		<li class="option" value=<%= opt[1] %> > <%= opt[0] %> </li>
+	<%end%>
+	</ul>
+</div> 

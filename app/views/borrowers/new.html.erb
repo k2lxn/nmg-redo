@@ -16,27 +16,15 @@
 				<div class="col-1-2">
 					<%= ff.label :loan_purpose %>
 					<%= ff.select :loan_purpose, options_for_select(@loan_purpose_options) %>
-					<div class="select" tabindex="0">
-						<span class="value"><%= @loan_purpose_options[0][0] %></span>
-						<ul class="opt-list hidden">
-						<% @loan_purpose_options.each do |opt| %>
-							<li class="option" value=<%= opt[1] %> > <%= opt[0] %> </li>
-						<%end%>
-						</ul>
-					</div>  <!-- close .select -->
+					<%= render partial: 'custom_select', 
+							locals: { tabindex: "0", options_list: @loan_purpose_options } %>
 				</div>				
 				
 				<div class="col-1-2">
 					<%= ff.label :property_type %>
 					<%= ff.select :property_type, options_for_select(@property_type_options) %>
-					<div class="select" tabindex="1">
-						<span class="value"><%= @property_type_options[0][0] %></span>
-						<ul class="opt-list hidden">
-						<% @property_type_options.each do |opt| %>
-							<li class="option" value=<%= opt[1] %> > <%= opt[0] %> </li>
-						<%end%>
-						</ul>
-					</div>  <!-- close .select -->
+					<%= render partial: 'custom_select', 
+							locals: { tabindex: "1", options_list: @property_type_options } %>
 				</div>
 			</div>
 			
