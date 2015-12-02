@@ -81,6 +81,8 @@
 			<div class="col-1-3">
 				<%= f.label :credit_score %>
 				<%= f.select :credit_score, options_for_select(@credit_score_options) %>
+				<%= render partial: 'custom_select', 
+							locals: { tabindex: "9", options_list: @credit_score_options } %>
 			</div>
 		</div>
 		
@@ -97,6 +99,8 @@
 				
 					<!-- <%= ff.label :state %> -->
 					<%= ff.select :state, options_for_select(@state_abbrev) %>
+					<%= render partial: 'custom_select', 
+							locals: { tabindex: "12", options_list: @state_abbrev } %>
 			
 					<!-- <%= ff.label :zip_code %> -->
 					<%= ff.text_field :zip_code, placeholder: "Zip code" %>
@@ -172,6 +176,8 @@
 				<div class="col-1-2">
 					<%= ff.label :credit_score, "Co-borrower's credit score" %>	
 					<%= ff.select :credit_score, options_for_select(@credit_score_options) %>	
+					<%= render partial: 'custom_select', 
+							locals: { tabindex: "23", options_list: @credit_score_options } %>
 				</div>	
 			</div>	
 		<%end%>		
