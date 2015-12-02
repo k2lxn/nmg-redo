@@ -4,6 +4,9 @@
 
 sm_breakpoint = 640
 	
+# Remove fallback <select> if javascript is running
+
+
 		
 $(document).on "page:change", ->
 	menu = $('header ul')
@@ -23,6 +26,19 @@ $(document).on "page:change", ->
 	 	$('header ul li a').click ->
 			menu.delay(300).slideToggle("fast")
 
+
+	# Use custom select widget if javascript enabled
+	$('body').removeClass('no-widget')
+	$('body').addClass('widget')
+	
+	# On-click to toggle select widget dropdown
+	$('.select').on 'click', (event) =>
+		$(this).find('.opt-list').toggleClass('hidden')
+		
+	# Highlight select options on mouseover	
+	$('.select').on 'mouseover', (event) =>
+		options = $('select').find('.opt-list').children()
+		for opt in options
 	
 # Show nav ul in browser if page resized
 $(window).resize ->

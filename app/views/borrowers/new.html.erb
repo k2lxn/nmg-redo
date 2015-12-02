@@ -16,7 +16,19 @@
 				<div class="col-1-2">
 					<%= ff.label :loan_purpose %>
 					<%= ff.select :loan_purpose, options_for_select(@loan_purpose_options) %>
+					<div class="select">
+						<span class="value"><%= @loan_purpose_options[0][0] %></span>
+						<ul class="opt-list">
+						<% @loan_purpose_options.each do |opt| %>
+							<li class="option" value=<%= opt[1] %> > <%= opt[0] %> </li>
+						<%end%>
+						</ul>
+					</div>  <!-- close .select -->
 				</div>
+				
+				
+				<br><br><br><br><br><br><br><br><br>    <!-- DEV ONLY -->
+				
 				
 				<div class="col-1-2">
 					<%= ff.label :property_type %>
