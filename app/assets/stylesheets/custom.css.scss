@@ -329,13 +329,17 @@ input[type="radio"]:checked + label:before {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
+	max-width: 80%;
 	margin: 0;
 	padding: 0.65em 2.8em 0.65em 1.5em;
 	font-size: $px-18;
 	color: #FFF;
 	background-color: $secondary-color;
-	background-image: linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,0) 75%,
-																					 $primary-color 75%, $primary-color); 
+	/*background-image: linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,0) 75%,
+																					 $primary-color 75%, $primary-color);*/
+																					 
+	background-image: linear-gradient(to left, $primary-color, $primary-color 1.5em, rgba(255,255,255,0) 1.5em, rgba(255,255,255,0));		
+	//background-size: 30px 100%;																		 
 	@include border-radius(17px)
 }
 
@@ -346,7 +350,7 @@ input[type="radio"]:checked + label:before {
 	font-size: 0.75em;
 	margin-top: -(0.75em/2);
 	top: 50%;
-	right: 8.5%;
+	right: 0.55em;
 }
 
 .select.active, .select:focus {
