@@ -52,13 +52,20 @@ h1 {
 	font-size: $px-30;
 }
 
+h1#hero-blurb {
+	font-family: $body-font-family;
+	font-size: $px-24;
+	font-weight: normal;
+	line-height: 1.6em;
+}
+
 a {
   text-decoration: none;
 }
 
 em {
 	font-style: normal;
-	color: $accent-color;
+	color: $secondary-accent-color;
 }
 
 nav li a {
@@ -86,7 +93,11 @@ form label {
 	font-size: $px-16;
 }
 
-
+p#hero-phone {
+	font-family: $header-font-family;
+	font-size: $px-30;
+	color: $dark-grey;
+}
 
 
 /* global */
@@ -104,6 +115,10 @@ html, body, div, form, header, footer, nav, p {
 body {
 	text-align: center;
 	background-color: $light-grey;
+}
+
+img { 
+	max-width: 100%;
 }
 
 .center-wrap {
@@ -194,6 +209,13 @@ header {
   } 
 }
 
+/* home */
+#hero-logo {
+
+}
+
+
+
 /* footer */
 footer {
 	float: left;
@@ -230,8 +252,6 @@ footer {
 	text-align: right;
 	margin-bottom: $base-line-height;
 }
-
-
 
 
 /* forms */
@@ -400,14 +420,12 @@ input[type="radio"]:checked + label:before {
 
 
 
-
-
 /* Media queries */
 
 // Small screens, 640px
 @media only screen and (max-width: 40em) {  
 	.center-wrap {
-		max-width: 25em;
+		width: 98%;
 	}
 	
 	header {
@@ -435,6 +453,23 @@ input[type="radio"]:checked + label:before {
 	#menu-icon {
 		display: inline-block;
 		z-index: 11;
+	}
+	
+	form {
+		width: 92%;
+		max-width: 25em;
+		margin: 0 auto;
+	}
+	
+	#home {
+		#hero-phone {
+			position: absolute;
+			top: -($px-30);
+			left: $global-padding;
+			z-index: 15;
+			width: fit-content;
+			box-sizing: border-box;
+		}
 	}
 }
 
