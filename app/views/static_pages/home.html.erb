@@ -1,25 +1,29 @@
+<div class="center-wrap clear-nav">
+
 <section id='home'>
-  <div class='row'>  
+  <div class='row' id='hero-row'>  
 		<div class='col-2-3'>
     	<%= image_tag('hero_logo.png', alt: "Nationwide Mortgage Group", id: 'hero-logo') %>
     </div>
     	
     <p id='hero-phone'>1(800)540-7079</p> 
   </div>
-   
-  <div class='row'>
-  	<div class='col-1-3'>
-  		<%= link_to "Get your quote", apply_path, id: 'hero_button', 
-  						class: 'button-style' %>
+  
+  <div class='table'> 
+  <div class='row tr'>
+  	<div class='td'>
+  		<%= link_to "Get your quote", apply_path, id: 'hero-button', 
+  						class: 'button-style' %>			
   	</div>
-  	<div class='col-2-3'>
+  	<div class='td'>
   		<h1 id='hero-blurb'>  
-       Whether you're buying a home or refinancing, 
-      <strong>Nationwide Mortgage Group</strong> is here to find you the 
-      <em>lowest rates</em> & <em>lowest closing costs</em> on your mortgage.
-    </h1>
+       	Whether you're buying a home or refinancing, 
+      	<strong>Nationwide Mortgage Group</strong> is here to find you the 
+      	<em>lowest rates</em> & <em>lowest closing costs</em> on your mortgage.
+    	</h1>
   	</div>
-  </div>    
+  </div> 
+  </div>    <!-- close .table-wrap -->   
 </section>
 
 
@@ -95,3 +99,4 @@
       
 </section>
 
+</div>    <!-- close .center-wrap -->

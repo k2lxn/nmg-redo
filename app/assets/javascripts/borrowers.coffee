@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-sm_breakpoint = 640
+sm_breakpoint = 695
 	
 # Remove fallback <select> if javascript is running
 

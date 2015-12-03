@@ -1,4 +1,6 @@
 <% provide(:title, "Apply") %>
+<div id='apply-page'>
+<div class="center-wrap clear-nav">
 <h1>Apply for a Free Quote</h1>
 
 <%= form_for @borrower, url: '/apply', method: :post do |f| %>
@@ -186,6 +188,9 @@
 	<%= f.submit "Submit", class: "button-style" %>
 	
 <%end%>
+</div>    <!-- close .center-wrap -->
+</div>    <!-- close #apply-page --> 
+
 
 <!-- DEBUG --> 
 
