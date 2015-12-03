@@ -36,27 +36,30 @@
       <%= image_tag('keys_icon.png', alt: 'icon: house keys') %>
     </div>
         
-    <div class='pitch_content'>
-      <h2>You don't need perfect credit or a lot up front to get the home you want</h2>
-      <div class='blurb'>
-          It's easier than you think to qualify with our Government 
-          & non-agency Fresh Start loan programs:
+    <h2>You don't need perfect credit or a lot up front to get the home you want</h2>
+    
+    <div class='blurb'>
+      It's easier than you think to qualify with our Government 
+      & non-agency Fresh Start loan programs:
+    </div>
+      
+    <div class='row'>
+      <div class='col-1-2'>
+      	<ul>
+       		<li>FHA loans</li>
+        	<li>HARP loans</li>
+        	<li>VA loans</li>
+        	<li>USDA Rural Housing</li>
+        	<li>& more</li>
+     	 	</ul>
       </div>
-      <ul>
-        <li>FHA loans</li>
-        <li>HARP loans</li>
-        <li>VA loans</li>
-        <li>USDA Rural Housing</li>
-        <li>& more</li>
-      </ul>
-          
-      <div class='sidebar'>
-        <%= image_tag('underwater_house_icon.png', alt: 'icon') %>
-        <aside>
-           Even underwater homeowners can refinance with HARP options
-        </aside>  
-      </div>  <!-- close .sidebar -->           
-     </div>  <!-- close .pitch_content -->        
+         
+      <aside class='col-1-2 sidebar'>  
+       	<%= image_tag('underwater_house_icon.png', alt: 'icon') %>
+        <p>Even underwater homeowners can refinance with HARP options</p>
+    	</aside>   <!-- close .col-1-2 -->
+    </div>   <!-- close .row -->  
+    
   </div>   <!-- close .pitch -->
 
 	<!-- pitch 2 -->
@@ -66,16 +69,15 @@
     	<%= image_tag('piggybank_icon.png', alt: 'icon: piggy bank') %>
     </div>
         
-    <div class='pitch_content'>  
-      <h2>Take advantage of mortgage rates at their lowest in decades!</h2>
-      <div class='blurb'>
-        <p>
-          Free up cash for life's other big milestones by refinancing
-          your mortgage. We can help you save, consolidate debt, or cash out.
-        </p>   
-      	<%= image_tag('grad_car_icon.png', alt: 'icon: graduate and new car') %>
-      </div>   <!-- close .blurb -->
-    </div>  <!-- close .pitch_content -->    
+
+    <h2>Take advantage of mortgage rates at their lowest in decades!</h2>
+    <div class='blurb'>
+      <p>
+        Free up cash for life's other big milestones by refinancing
+        your mortgage. We can help you save, consolidate debt, or cash out.
+      </p>   
+      <%= image_tag('grad_car_icon.png', alt: 'icon: graduate and new car') %>
+    </div>   <!-- close .blurb --> 
   </div>   <!-- close .pitch -->
       
   <!-- pitch 3 -->    
@@ -84,16 +86,14 @@
     <div class='icon'>
       <%= image_tag('brain_icon.png', alt: 'icon: brain') %>
     </div>
-        
-    <div class='pitch_content'>  
-      <h2>Concierge Mortgage Services</h2>
-      <div class='blurb'>
-        We're experts. We can help you navigate the options and find
-        the best deal for you. Call now or click below to get a
-        quote and get started!
-      </div>   <!-- close .blurb -->
-    </div>  <!-- close .pitch_content -->    
-  </div>   <!-- close .pitch -->
+         
+    <h2>Concierge Mortgage Services</h2>
+    <div class='blurb'>
+      We're experts. We can help you navigate the options and find
+      the best deal for you. Call now or click below to get a
+      quote and get started!
+    </div>   <!-- close .blurb --> 
+	</div>   <!-- close .pitch -->
       
   <%= link_to "Get your quote", apply_path, class: 'button-style' %>
       

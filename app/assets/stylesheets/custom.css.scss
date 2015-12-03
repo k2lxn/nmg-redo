@@ -33,6 +33,7 @@ $nav-height: 3.750em;
 $px-16: 0.85em;
 $px-18: 1.1em;
 $px-20: 1.25em;
+$px-22: 1.375em;
 $px-24: 1.5em;
 $px-30: 1.88em;
 
@@ -50,6 +51,10 @@ h1, h2, h3, h4 {
 
 h1 {
 	font-size: $px-30;
+}
+
+h2 {
+	font-size: $px-20;
 }
 
 h1#hero-blurb {
@@ -104,7 +109,7 @@ p#hero-phone {
 $base-line-height: 1.33em;
 $global-padding: $base-line-height/2;
 
-html, body, div, form, header, footer, nav, section, p {
+html, body, div, form, header, footer, nav, section, aside, p {
 	position: relative;
   margin: 0;
   padding: 0;
@@ -133,6 +138,7 @@ body {
 section {
 	display: block;
 	float: left;
+	margin-bottom: ($base-line-height * 2);
 	border-bottom: 1.5px solid $dark-grey;
 }
 
@@ -247,6 +253,9 @@ header {
 		overflow: visible;
 		height: 12.5em;
 	}
+	.tr {
+		margin-bottom: (2*$base-line-height);
+	}
 	.td:first-child {
 		width: 33%;
 		vertical-align: middle;
@@ -256,9 +265,58 @@ header {
 	}	
 }
 
-.pitch img {
-	max-width: 11.25em;
-	max-height: 8.938em;	
+.pitch {
+	width: 80%;
+	margin: 0 auto;
+	padding: $global-padding 0;
+	position: relative;
+	clear: left;
+	border-top: 2px dotted $accent-color;
+	
+	img {
+		max-width: 10.25em;
+		max-height: 7.938em;	
+	}
+	.blurb {
+		margin: $global-padding auto ($global-padding * 2);
+	}
+	.row {
+		padding: 0;
+		margin: 0 auto;
+		float: none;
+	}
+	.col-1-2 {
+		width: 50%;
+		float: none;
+		display: inline-block;
+		margin: 0 0 ($global-padding * 2) -3px;
+		vertical-align: top;
+	}
+	ul {
+		text-align: left;
+		list-style: circle;
+		overflow: visible;
+		white-space: nowrap;
+		margin: 0;
+		padding: 0;
+		li {
+			margin-bottom: $global-padding;
+		}
+	}
+	aside {
+		display: inline-block;
+		font-size: $px-16;
+		position: relative;
+		right: -3em;
+		
+		img { 
+			width: 7.3em;
+		}
+	}
+}
+
+.pitch:first-of-type {
+	border-top: none;
 }
 
 
@@ -511,11 +569,6 @@ input[type="radio"]:checked + label:before {
 		margin: 0 auto;
 	}
 	
-	.table, .tr {
-	//	display: block;
-	}
-//	.td { display: inline-block; }
-	
 	#home {
 		#hero-row {
 			height: auto;
@@ -537,11 +590,11 @@ input[type="radio"]:checked + label:before {
 		h1#hero-blurb {
 			font-size: 1.2em;
 		}
-		.td:first-child, .td:nth-child(2) {
-			//width: 100%;
-		}
-		.td:first-child {
-			//margin: 15px auto;
+	}
+	
+	.pitch {
+		.row {
+			max-width: 400px;
 		}
 	}
 }
@@ -561,12 +614,15 @@ input[type="radio"]:checked + label:before {
 	.td { display: inline-block; }
 	
 	#home {
+		#hero-button {
+			font-size: $px-18;
+		}
 		.td:first-child, .td:nth-child(2) {
 			width: 100%;
 		}
 		.td:first-child {
-			margin: 15px auto;
-		}
+			margin: 15px auto 30px;
+		}	
 	}	
 }
 
@@ -616,6 +672,37 @@ input[type="radio"]:checked + label:before {
 		#menu-icon {
 			display: none;
 		}
+	}
+	
+	.pitch {
+		.icon {
+			position: absolute;
+			width: fit-content;
+			left: -6.0em;
+		}
+		img {
+			max-width: 11.25em;
+			max-height: 8.938em;
+		}
+		h2 {
+			font-size: $px-24;
+			width: 70%;
+			margin: 0 auto;
+		}
+		.blurb {
+			width: 80%;
+		}
+		.row {
+			width: 80%;
+			margin: 0 auto;
+			float: none;
+		}
+		.col-1-2 {
+			float: none;
+			display: inline-block;
+			margin: 0 0 ($global-padding * 2) -3px;
+			vertical-align: top;
+		}		
 	}
 }
 
