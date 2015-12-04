@@ -1,8 +1,45 @@
 <%= provide(:title, "Prequalification Calculator") %>
 
 <div class='center-wrap clear-nav'>
-<h1>Prequalification Calculator</h1>
+<h1>How much can I borrow?</h1>
+<h2>Prequalification Calculator</h2>
 
+<%= form_for @prequal_calc, url: "prequalification_calculator#update", 
+														method: :post do |f| %>
+	<%= f.label :income, "Est. gross monthly income" %>
+	<%= f.text_field :income %>
+	
+	<%= f.label :debt, "Monthly debt/payments" %>
+	<%= f.text_field :debt%>
+	
+	<h3>Desired loan terms</h3>
+	
+	<%= f.label :rate, "Interest rate" %>
+	<%= f.select :rate, options_for_select(select_options("rate"), selected: :rate) %>
+	<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "2", options_list: select_options("rate") } %>
+	
+	<%= f.label :term %>
+	<%= f.select :term, options_for_select(select_options("term"), selected: :term) %>
+	<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "3", options_list: select_options("term") } %>
+	
+	<%= f.label :down, "Down payment(%)" %>
+	<%= f.select :down, options_for_select(select_options("down"), selected: :down) %>
+	<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "4", options_list: select_options("down") } %>
+							
+	<%= f.submit "Calculate" %>						
+<%end%>
 
+<!-- display results -->
+<h4>Home price</h4>
+<%= @result[:home_price] %>
+
+<h4>Loan amount</h4>
+<%= @result[:loan_amt] %>
+
+<h4>Monthly payment</h4>
+<%= @result[:monthly] %>
 
 </div>
