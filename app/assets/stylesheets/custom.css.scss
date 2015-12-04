@@ -138,7 +138,6 @@ body {
 section {
 	display: block;
 	float: left;
-	margin-bottom: ($base-line-height * 2);
 	border-bottom: 1.5px solid $dark-grey;
 }
 
@@ -267,8 +266,9 @@ header {
 
 .pitch {
 	width: 80%;
+	max-width: 50.0em;
 	margin: 0 auto;
-	padding: $global-padding 0;
+	padding: ($global-padding * 3) 0;
 	position: relative;
 	clear: left;
 	border-top: 2px dotted $accent-color;
@@ -278,7 +278,25 @@ header {
 		max-height: 7.938em;	
 	}
 	.blurb {
+		position: relative;
 		margin: $global-padding auto ($global-padding * 2);
+		word-wrap: break-word;
+		p, img {
+			display: inline-block;
+			margin: 0; padding: 0;
+		}
+		p {
+			width: 80%;
+		}
+		img {
+			width: 8.750em;
+			position: absolute;
+			right: -(8.750em / 2);
+			top: -1em;
+		}
+	}
+	.blurb:nth-of-type(2) {
+		text-align: left;
 	}
 	.row {
 		padding: 0;
@@ -596,6 +614,10 @@ input[type="radio"]:checked + label:before {
 		.row {
 			max-width: 400px;
 		}
+		.blurb img {
+			width: 6.85em;
+			right: -3em;
+		}
 	}
 }
 
@@ -690,7 +712,7 @@ input[type="radio"]:checked + label:before {
 			margin: 0 auto;
 		}
 		.blurb {
-			width: 80%;
+			width: 70%;
 		}
 		.row {
 			width: 80%;
