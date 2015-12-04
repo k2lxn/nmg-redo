@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  loan_amt: 9.99
+  original_rate: 9.99
+  original_term: 1
+  payments: 1
+  new_rate: 9.99
+  new_term: 1
+
+two:
+  loan_amt: 9.99
+  original_rate: 9.99
+  original_term: 1
+  payments: 1
+  new_rate: 9.99
+  new_term: 1
