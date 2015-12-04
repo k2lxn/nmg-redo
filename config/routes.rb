@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'prequalification_calculator/edit'
-
-  get 'prequalification_calculator/update'
-
 	root 'static_pages#home'
 	
 	get '/about', to: "static_pages#about" 
@@ -16,6 +12,10 @@ Rails.application.routes.draw do
   get '/mortgage_calculator', to: 'mortgage_calculators#edit'
 
 	post '/mortgage_calculator', to: 'mortgage_calculators#update'
+	
+	get '/prequalification_calculator', to: 'prequalification_calculator#edit'
+	
+	post '/prequalification_calculator', to: 'prequalification_calculator#update'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
