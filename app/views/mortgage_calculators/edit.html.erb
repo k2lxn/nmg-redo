@@ -1,4 +1,6 @@
 <% provide(:title, "Mortgage Calculator") %>
+
+<div class='center-wrap clear-nav'>
 <h1>Mortgage Calculator</h1>
 
 <%= form_for @mrtg_calc, url: { controller: "mortgage_calculators", action: "update" },
@@ -27,5 +29,7 @@
 
 <h4>Total interest</h4>
 <%= @result[:interest] %>
+
+</div>   <!-- close .center-wrap -->
 
 <%= debug(params) if Rails.env.development? %>

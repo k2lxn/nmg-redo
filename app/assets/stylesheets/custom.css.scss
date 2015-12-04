@@ -127,8 +127,30 @@ a {
 	margin:0; padding:0;
 }
 
+a:hover {
+	color: $accent-color;
+}
+
+ul {
+	width: fit-content;
+	text-align: left;
+	list-style: circle;
+	//list-style-position: inside;
+	margin:0;padding:0;
+}
+
+ul p {
+	font-size: $px-16;
+	max-width: 22em;
+	padding-left: $global-padding;
+}
+
 .center-wrap {
 	width: 90%;
+	margin: 0 auto;
+}
+
+.center {
 	margin: 0 auto;
 }
 
@@ -322,10 +344,9 @@ header {
 		vertical-align: top;
 	}
 	ul {
-		text-align: left;
-		list-style: circle;
 		overflow: visible;
 		white-space: nowrap;
+		list-style-position: outside;
 		margin: 0;
 		padding: 0;
 		li {
