@@ -618,6 +618,10 @@ input[type="radio"]:checked + label:before {
 			width: fit-content;
 			box-sizing: border-box;
 		}
+		#hero-phone a {
+			position: relative;
+			left: 0;
+		}
 		h1#hero-blurb {
 			font-size: 1.2em;
 		}
