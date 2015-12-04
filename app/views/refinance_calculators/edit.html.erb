@@ -1,2 +1,57 @@
-<h1>RefinanceCalculators#edit</h1>
-<p>Find me in app/views/refinance_calculators/edit.html.erb</p>
+<%= provide(:title, "Refinance Calculator") %>
+
+<div class='center-wrap clear-nav'>
+
+<h1>Refinance Savings Calculator</h1>
+
+<%= form_for @refinance_calc, url: {controller: "refinance_calculators", 
+																	action: "update" }, method: :post do |f| %>
+
+	<%= f.label :loan_amt, "Original loan amount" %>
+	<%= f.text_field :loan_amt %>
+	
+	<%= f.label :original_rate %>
+	<%= f.select :original_rate, options_for_select(select_options("rate"), 
+																									selected: :original_rate) %>
+	<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "1", options_list: select_options("rate") } %>
+	
+	
+	<%= f.label :original_term %>
+	<%= f.select :original_term, options_for_select(select_options("term"), 
+																									selected: :original_term) %>
+	<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "2", options_list: select_options("term") } %>
+	
+	
+	<%= f.label :payments, "Payments made" %>
+	<%= f.text_field :payments %>
+	
+	<%= f.label :new_rate %>
+	<%= f.select :new_rate, options_for_select(select_options("rate"), 
+																							selected: :new_rate) %>
+	<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "4", options_list: select_options("rate") } %>
+	
+	
+	<%= f.label :new_term %>
+	<%= f.select :new_term, options_for_select(select_options("term"), 
+																						selected: :new_term) %>
+	<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "5", options_list: select_options("term") } %>
+	
+	
+	<%= f.submit "Calculate" %>
+<%end%>
+
+<!-- display results -->
+<h4>New loan balance</h4>
+<%= @result[:new_balance] %>
+
+<h4>Monthly savings</h4>
+<%= @result[:monthly_savings] %>
+
+<h4>Interest savings</h4>
+<%= @result[:interest_savings] %>
+
+</div>

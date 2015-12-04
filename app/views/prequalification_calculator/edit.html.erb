@@ -4,8 +4,8 @@
 <h1>How much can I borrow?</h1>
 <h2>Prequalification Calculator</h2>
 
-<%= form_for @prequal_calc, url: "prequalification_calculator#update", 
-														method: :post do |f| %>
+<%= form_for @prequal_calc, url: {controller: "prequalification_calculator", 
+																	action: "update" }, method: :post do |f| %>
 	<%= f.label :income, "Est. gross monthly income" %>
 	<%= f.text_field :income %>
 	
