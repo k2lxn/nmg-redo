@@ -18,14 +18,14 @@
 				<div class="col-1-2">
 					<%= ff.label :loan_purpose %>
 					<%= ff.select :loan_purpose, options_for_select(@loan_purpose_options) %>
-					<%= render partial: 'custom_select', 
+					<%= render partial: 'shared/custom_select', 
 							locals: { tabindex: "0", options_list: @loan_purpose_options } %>
 				</div>				
 				
 				<div class="col-1-2">
 					<%= ff.label :property_type %>
 					<%= ff.select :property_type, options_for_select(@property_type_options) %>
-					<%= render partial: 'custom_select', 
+					<%= render partial: 'shared/custom_select', 
 							locals: { tabindex: "1", options_list: @property_type_options } %>
 				</div>
 			</div>
@@ -83,7 +83,7 @@
 			<div class="col-1-3">
 				<%= f.label :credit_score %>
 				<%= f.select :credit_score, options_for_select(@credit_score_options) %>
-				<%= render partial: 'custom_select', 
+				<%= render partial: 'shared/custom_select', 
 							locals: { tabindex: "9", options_list: @credit_score_options } %>
 			</div>
 		</div>
@@ -101,7 +101,7 @@
 				
 					<!-- <%= ff.label :state %> -->
 					<%= ff.select :state, options_for_select(@state_abbrev) %>
-					<%= render partial: 'custom_select', 
+					<%= render partial: 'shared/custom_select', 
 							locals: { tabindex: "12", options_list: @state_abbrev } %>
 			
 					<!-- <%= ff.label :zip_code %> -->
@@ -178,7 +178,7 @@
 				<div class="col-1-2">
 					<%= ff.label :credit_score, "Co-borrower's credit score" %>	
 					<%= ff.select :credit_score, options_for_select(@credit_score_options) %>	
-					<%= render partial: 'custom_select', 
+					<%= render partial: 'shared/custom_select', 
 							locals: { tabindex: "23", options_list: @credit_score_options } %>
 				</div>	
 			</div>	
