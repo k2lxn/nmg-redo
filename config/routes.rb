@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'refinance_calculators/edit'
+
+  get 'refinance_calculators/update'
+
 	root 'static_pages#home'
 	
 	get '/about', to: "static_pages#about" 
