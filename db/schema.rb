@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151129002106) do
+ActiveRecord::Schema.define(version: 20151204042105) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "street_1"
@@ -65,6 +65,16 @@ ActiveRecord::Schema.define(version: 20151129002106) do
     t.decimal  "loan_amt"
     t.decimal  "rate"
     t.decimal  "term"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prequalification_calculators", force: :cascade do |t|
+    t.decimal  "income"
+    t.decimal  "debt"
+    t.decimal  "rate"
+    t.integer  "term"
+    t.decimal  "down"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
