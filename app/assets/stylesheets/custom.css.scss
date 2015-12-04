@@ -196,7 +196,12 @@ nav {
 	display: table-cell;
 }
 
-
+// Prevent formatting of phone numbers
+p:link {
+	text-decoration: none;
+	color: $dark-grey;
+	padding:0; margin:0;
+}
 
 /* header */
 header {
