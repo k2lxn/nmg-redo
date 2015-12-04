@@ -66,6 +66,7 @@ h1#hero-blurb {
 
 a {
   text-decoration: none;
+  color: inherit;  // for telephone numbers in iOS
 }
 
 em {
