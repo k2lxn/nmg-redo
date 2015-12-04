@@ -5,4 +5,6 @@ class StaticPagesController < ApplicationController
   def home
   end
   
+  def tools
+  end
 end
