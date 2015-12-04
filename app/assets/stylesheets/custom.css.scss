@@ -292,6 +292,7 @@ header {
 	}
 	.blurb {
 		position: relative;
+		text-align: left;
 		margin: $global-padding auto ($global-padding * 2);
 		word-wrap: break-word;
 		p, img {
@@ -307,9 +308,6 @@ header {
 			right: -(8.750em / 2);
 			top: -1em;
 		}
-	}
-	.blurb:nth-of-type(2) {
-		text-align: left;
 	}
 	.row {
 		padding: 0;
