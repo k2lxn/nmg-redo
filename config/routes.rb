@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'prequalification_calculator/edit'
+
+  get 'prequalification_calculator/update'
+
 	root 'static_pages#home'
 	
 	get '/about', to: "static_pages#about" 
