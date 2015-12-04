@@ -12,11 +12,15 @@
 	<%= f.label :rate, "Interest rate" %>
 	<% rate = @mrtg_calc.rate.to_s %>
 	<%= f.select :rate, options_for_select(select_options("rate"), selected: rate) %>
+	<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "1", options_list: select_options("rate") } %>
 	
 	<%= f.label :term %>
 	<% term = @mrtg_calc[:term].to_s %>
 	<%= f.select :term, options_for_select(select_options("term"), selected: term) %>
-	
+	<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "2", options_list: select_options("term") } %>
+							
 	<%= f.submit "Calculate" %>
 
 <%end%>
