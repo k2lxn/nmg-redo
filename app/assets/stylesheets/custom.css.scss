@@ -233,7 +233,8 @@ section {
   @include border-radius(27px);
 }
 .button-style:hover {
-	color: $secondary-color;
+	color: #FFF;
+	background-color: $secondary-color;
 }
 .clear-btn {
 	height: 15px;
