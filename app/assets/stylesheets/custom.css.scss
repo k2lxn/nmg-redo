@@ -121,7 +121,7 @@ form label {
 
 p#hero-phone {
 	font-family: $header-font-family;
-	font-size: $px-30;
+	font-size: $px-24;
 	color: $dark-grey;
 	padding: 0;
 }
@@ -708,7 +708,6 @@ input[type="radio"]:checked + label:before {
 			left: -1.5%;
 		}
 		#hero-phone {
-			font-size: $px-24;
 			position: absolute;
 			top: -($px-30);
 			left: $global-padding;
@@ -766,7 +765,6 @@ input[type="radio"]:checked + label:before {
 // Content-specific tweak for #hero-phone, 695px - 740px
 @media only screen and (min-width: 43.438em) and (max-width: 46.25em) {
 	#hero-phone {
-			font-size: $px-30;
 			position: absolute;
 			top: -($px-30);
 			left: $global-padding;
@@ -809,6 +807,12 @@ input[type="radio"]:checked + label:before {
 		#menu-icon {
 			display: none;
 		}
+	}
+	
+	p#hero-phone {
+		width: auto;
+		position: absolute;
+		right: 0;
 	}
 	
 	.pitch {
