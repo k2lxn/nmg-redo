@@ -8,6 +8,8 @@ $light-grey: #EEE;
 $medium-grey: #AAA;
 $dark-grey: #555;
 
+$base-line-height: 1.33em;
+$global-padding: $base-line-height/2;
 $nav-height: 3.750em;
 
 @mixin border-radius($radius) {
@@ -44,9 +46,14 @@ body {
 	font-family: $body-font-family; 
 }
 
-h1, h2, h3, h4 {
+h1, h2 {
 	font-family: $header-font-family;
 	font-weight: normal;
+}
+
+h3, h4 {
+	font-family: $body-font-family;
+	font-weight: 700;
 }
 
 h1 {
@@ -57,11 +64,24 @@ h2 {
 	font-size: $px-20;
 }
 
+h3 {
+	font-size: $px-18;
+}
+
+h4 {
+	font-size: 0.95em;
+}
+
 h1#hero-blurb {
 	font-family: $body-font-family;
 	font-size: $px-24;
 	font-weight: normal;
 	line-height: 1.6em;
+}
+
+p {
+	font-size: 1em;
+	line-height: $base-line-height;
 }
 
 a {
@@ -103,13 +123,11 @@ p#hero-phone {
 	font-family: $header-font-family;
 	font-size: $px-30;
 	color: $dark-grey;
+	padding: 0;
 }
 
 
 /* global */
-$base-line-height: 1.33em;
-$global-padding: $base-line-height/2;
-
 html, body, div, form, header, footer, nav, section, aside, p {
 	position: relative;
   margin: 0;
@@ -118,9 +136,18 @@ html, body, div, form, header, footer, nav, section, aside, p {
   box-sizing: border-box;
 }
 
+html, body {
+	min-height: 100%;
+	float: left;
+}
+
 body {
 	text-align: center;
 	background-color: #FFF;
+}
+
+h1 {
+	margin-bottom: $base-line-height;
 }
 
 a {
@@ -129,6 +156,11 @@ a {
 
 a:hover {
 	color: $accent-color;
+}
+
+p {
+	text-align: left;
+	padding: $global-padding;
 }
 
 ul {
@@ -148,6 +180,7 @@ ul p {
 .center-wrap {
 	width: 90%;
 	margin: 0 auto;
+	clear: both;
 }
 
 .center {
@@ -156,6 +189,7 @@ ul p {
 
 .clear-nav {
 	padding-top: $nav-height;
+	min-height: 100%;
 }
 
 .hidden {
@@ -199,6 +233,9 @@ section {
   
   @include border-radius(27px);
 }
+.button-style:hover {
+	color: $secondary-color;
+}
 
 nav {
 	ul {
@@ -211,6 +248,10 @@ nav {
 	ul li {
   	display: inline-block;
   } 
+}
+
+aside p {
+	padding: 0;
 }
 
 .table {
@@ -315,7 +356,9 @@ header {
 	.blurb {
 		position: relative;
 		text-align: left;
+		line-height: $base-line-height;
 		margin: $global-padding auto ($global-padding * 2);
+		padding-left: $global-padding;
 		word-wrap: break-word;
 		p, img {
 			display: inline-block;
@@ -377,6 +420,11 @@ footer {
 	padding: $global-padding;
 	color: $dark-grey;
 	background-color: $medium-grey;
+	
+	nav ul {
+		display: inline-block;
+		margin: 0;padding: 0;
+	}
 		
 	nav ul li {
 		margin-left: $base-line-height;
@@ -575,6 +623,30 @@ input[type="radio"]:checked + label:before {
 	max-height: 0;
 }
 
+
+/* About page */
+#about-us {
+	p, h2, h3, h4 {
+		text-align: left;
+		padding-left: $global-padding;
+		margin: 0 auto;
+	}	
+	p {
+		padding-top: 0;
+	}
+	strong {
+		font-weight: normal;
+		color: $secondary-accent-color;
+	}
+	h2 {
+		color: $dark-grey;
+		background: $light-grey;
+		margin-bottom: $global-padding;
+	}
+	h4 {
+		color: $primary-color;
+	}
+}
 
 
 
