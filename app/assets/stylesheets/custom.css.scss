@@ -271,6 +271,13 @@ aside p {
 	display: table-cell;
 }
 
+.stripe {
+	background: repeating-linear-gradient(
+		-45deg, $light-grey, $light-grey 5px,
+		#FFF 5px, #FFF 10px
+	);
+}
+
 // Prevent formatting of phone numbers
 p:link {
 	text-decoration: none;
@@ -637,10 +644,14 @@ input[type="radio"]:checked + label:before {
 	p, h2, h3, h4 {
 		text-align: left;
 		padding-left: $global-padding;
-		margin: 0 auto;
 	}	
+	h4 {
+		margin-top: $global-padding / 2;
+		margin-bottom: $global-padding / 2;
+	}
 	p {
 		padding-top: 0;
+		background: #FFF;
 	}
 	strong {
 		font-weight: normal;
@@ -653,6 +664,9 @@ input[type="radio"]:checked + label:before {
 	}
 	h4 {
 		color: $primary-color;
+	}	
+	.row {
+		margin-bottom: $global-padding;
 	}
 }
 
