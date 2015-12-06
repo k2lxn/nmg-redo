@@ -202,6 +202,9 @@ section {
 	float: left;
 	border-bottom: 1.5px solid $dark-grey;
 }
+section:last-of-type {
+	border-bottom: none;
+}
 
 .row {
 	width: 100%;
