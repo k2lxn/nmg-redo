@@ -367,8 +367,8 @@ header {
 	border-top: 2px dotted $accent-color;
 	
 	img {
-		max-width: 10.25em;
-		max-height: 7.938em;	
+		max-height: 6em;
+		
 	}
 	.blurb {
 		position: relative;
@@ -851,8 +851,7 @@ input[type="radio"]:checked + label:before {
 			left: -6.0em;
 		}
 		img {
-			max-width: 11.25em;
-			max-height: 8.938em;
+			max-height: 7.5em;
 		}
 		h2 {
 			font-size: $px-24;
