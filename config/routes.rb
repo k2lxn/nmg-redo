@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 	
 	post '/apply', to: "borrowers#create"
 	
+	get '/confirm', to: "static_pages#confirm" 
+	
 	get '/tools', to: "static_pages#tools"
 	
   get '/mortgage_calculator', to: 'mortgage_calculators#edit'
