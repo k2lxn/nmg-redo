@@ -15,7 +15,7 @@ class BorrowersController < ApplicationController
   def create
   	@borrower = Borrower.new(borrower_params)
   	if @borrower.save 
-  		redirect_to '/confirm' 
+  		#redirect_to '/confirm' 
   	else
   		@loan_purpose_options = loan_purpose_options
   		@property_type_options = property_type_options

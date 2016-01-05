@@ -3,7 +3,7 @@
 <div class="center-wrap clear-nav">
 <h1>Apply for a Free Quote</h1>
 
-<%= form_for @borrower, url: '/apply', method: :post do |f| %>
+<%= form_for @borrower, url: '/confirm', method: :post do |f| %>
 	
 	<%= render 'shared/error_messages' %>
 	
@@ -33,12 +33,12 @@
 			<div class="row">
 				<div class="col-1-2">
 					<%= ff.label :purchase_price %>
-					<%= ff.text_field :purchase_price %>
+					<%= ff.text_field :purchase_price, placeholder: "$" %>
 				</div>	
 		
 				<div class="col-1-2">
 					<%= ff.label :budget, "Down payment budget" %>
-					<%= ff.text_field :budget %>
+					<%= ff.text_field :budget, placeholder: "$" %>
 				</div>	
 			</div>
 		
