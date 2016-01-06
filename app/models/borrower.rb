@@ -63,9 +63,10 @@ class Borrower < ActiveRecord::Base
 		
 		# Write coborrower info to Contact worksheet
 		# Need to add Spouse (bool) column
-		#contact_ws[next_row, 14] = self.coborrower.first_name 
-		#contact_ws[next_row, 15] = self.coborrower.last_name
-		#contact_ws[next_row, 16] = self.coborrower.credit_score  	
+		
+		contact_ws[next_row, 14] = self.coborrower.first_name 
+		contact_ws[next_row, 15] = self.coborrower.last_name
+		contact_ws[next_row, 16] = self.coborrower.credit_score  	
 		
 		contact_ws.save
 		

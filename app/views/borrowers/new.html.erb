@@ -144,7 +144,7 @@
 		<legend>Co-Borrower information (optional)</legend>
 		<h3>My co-borrower will be ...</h3>
 		
-		<%= fields_for :coborrower do |ff| %>
+		<%= f.fields_for :coborrower do |ff| %>
 			<div class="row radio-row">
 				<div class="col-1-3">
 					<%= ff.radio_button :spouse, "nil", checked: true %>
