@@ -27,11 +27,50 @@ class Borrower < ActiveRecord::Base
 		
 		next_row = loan_ws.num_rows + 1
 		
-		# Write loan information (i.e. Application data) 
+		# Write borrower name (first and last) to Loan worksheet
 		loan_ws[next_row, 1] = self.first_name
+		loan_ws[next_row, 2] = self.last_name
+		
+		# Write loan information (i.e. Application data) to Loan worksheet
+		loan_ws[next_row, 3] = self.credit_score
+		loan_ws[next_row, 4] = self.application.loan_purpose
+		loan_ws[next_row, 5] = self.application.property_type
+		loan_ws[next_row, 6] = self.application.purchase_price
+		loan_ws[next_row, 7] = self.application.budget
+		loan_ws[next_row, 8] = self.application.zip_code
+		
 		loan_ws.save
 		
+		# Write borrower information to Contact worksheet
+		next_row = contact_ws.num_rows + 1
+		contact_ws[next_row, 1] = self.first_name
+		contact_ws[next_row, 2] = self.last_name
+		contact_ws[next_row, 3] = self.email
+		contact_ws[next_row, 4] = self.phone
+		contact_ws[next_row, 5] = self.credit_score
+		
+		# Write non-required fields if present
+		contact_ws[next_row, 6] = self.income if not self.income.nil?
+		contact_ws[next_row, 7] = self.monthly_debt if not self.monthly_debt.nil?
+		contact_ws[next_row, 8] = self.employer if not self.employer.empty?
+		contact_ws[next_row, 9] = self.employed_since if not self.employed_since.nil?
+		
+		# Write borrower address information to Contact worksheet
+		contact_ws[next_row, 10] = self.address.street_1
+		contact_ws[next_row, 11] = self.address.city
+		contact_ws[next_row, 12] = self.address.state
+		contact_ws[next_row, 13] = self.address.zip_code
+		
+		# Write coborrower info to Contact worksheet
+		# Need to add Spouse (bool) column
+		#contact_ws[next_row, 14] = self.coborrower.first_name 
+		#contact_ws[next_row, 15] = self.coborrower.last_name
+		#contact_ws[next_row, 16] = self.coborrower.credit_score  	
+		
+		contact_ws.save
+		
 		loan_ws.reload
+		contact_ws.reload
 	end
 	
 end
