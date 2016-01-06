@@ -22,8 +22,8 @@ class Borrower < ActiveRecord::Base
 		session = GoogleDrive.saved_session("config.json")
 		
 		# Get worksheet from spreadsheet
-		loan_ws = session.spreadsheet_by_key("1Ntt_7-UBorOXXx6_PFfK_cE9_ElTXcQZfaebMQgBNmA").worksheets[0]
-		contact_ws = session.spreadsheet_by_key("1Ntt_7-UBorOXXx6_PFfK_cE9_ElTXcQZfaebMQgBNmA").worksheets[1]
+		loan_ws = session.spreadsheet_by_key("13L7-_UACtzqvIukzx14qNoDPe1zdwkBZDQxOhQL2XtY").worksheets[0]
+		contact_ws = session.spreadsheet_by_key("13L7-_UACtzqvIukzx14qNoDPe1zdwkBZDQxOhQL2XtY").worksheets[1]
 		
 		next_row = loan_ws.num_rows + 1
 		
