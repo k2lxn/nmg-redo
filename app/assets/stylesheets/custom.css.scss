@@ -292,6 +292,21 @@ p:link {
 }
 
 /* header */
+.container > .navbar-header {
+	height: $nav-height;
+	margin-left: 0;
+	margin-right: 0;
+}
+.navbar-brand {
+	img {
+		width: 150px;
+	}
+	padding: 0;
+	height: fit-content;
+	margin-top: 12px;
+}
+
+
 /*
 header {
 	nav {
