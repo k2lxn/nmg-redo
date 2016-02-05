@@ -1,4 +1,90 @@
 <% provide(:title, "Apply") %>
+
+<div class="container-fluid clear-nav">
+
+	<h1>Apply for a Free Quote</h1>
+	<%= render 'shared/error_messages' %>
+	<%= form_for @borrower, url: '/confirm', method: :post do |f| %>
+	
+		<fieldset>
+			<legend>Home information</legend>
+			<%= f.fields_for :application do |ff| %>
+			<div class="row">
+				<div class="form-group col-sm-6">
+    				<%= ff.label :loan_purpose %>
+					<%= ff.select :loan_purpose, options_for_select(@loan_purpose_options), class: 'form-control' %>
+					<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "0", options_list: @loan_purpose_options } %>
+				</div>
+				<div class="form-group col-sm-6">
+    				<%= ff.label :property_type %>
+					<%= ff.select :property_type, options_for_select(@property_type_options), class: 'form-control' %>
+					<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "1", options_list: @property_type_options } %>	
+				</div>
+			</div> <!-- end .row -->	
+			<div class="row">
+				<div class="form-group col-sm-6">
+					<%= ff.label :purchase_price %>
+					<%= ff.text_field :purchase_price, placeholder: "$", class: 'form-control' %>
+				</div>
+				<div class="form-group col-sm-6">
+					<%= ff.label :budget, "Down payment budget" %>
+					<%= ff.text_field :budget, placeholder: "$", class: 'form-control' %>
+				</div>
+			</div> <!-- end .row -->
+			<div class="row">	
+				<div class="form-group col-sm-6">
+					<%= ff.label :zip_code %>
+					<%= ff.text_field :zip_code, class: 'form-control' %>
+				</div>
+			</div> <!-- end .row -->
+			<%end%>  <!-- end fields_for :application -->
+		</fieldset>
+		
+		<span class='accent-border'>&nbsp</span>
+	
+		<fieldset>
+			<legend>Borrower information</legend>
+			<div class="row">
+				<div class="form-group col-sm-6">
+					<%= f.label :first_name %>
+					<%= f.text_field :first_name, class: 'form-control' %>
+			</div>
+			<div class="form-group col-sm-6">
+				<%= f.label :last_name %>
+				<%= f.text_field :last_name, class: 'form-control' %>
+			</div>	
+		</div> <!-- end .row -->
+		
+		<div class="row">
+			<div class="form-group col-sm-8">
+				<%= f.label :email %>
+				<%= f.text_field :email, class: 'form-control' %>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="form-group col-sm-8">
+				<%= f.label :phone, "Best phone contact" %>
+				<%= f.text_field :phone, class: 'form-control' %>
+			</div>	
+		
+			<div class="form-group col-sm-4">
+				<%= f.label :credit_score %>
+				<%= f.select :credit_score, options_for_select(@credit_score_options), class: 'form-control' %>
+				<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "9", options_list: @credit_score_options } %>
+			</div>
+		</div>
+			
+		</fieldset>
+			
+	<%end%> <!-- end form_for @borrower -->
+</div>  <!-- end .container -->
+
+
+
 <div id='apply-page'>
 <div class="center-wrap clear-nav">
 <h1>Apply for a Free Quote</h1>
