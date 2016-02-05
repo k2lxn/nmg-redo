@@ -304,6 +304,7 @@ p:link {
 	padding: 0;
 	height: fit-content;
 	margin-top: 12px;
+	margin-left: 15px;
 }
 
 
@@ -704,32 +705,6 @@ input[type="radio"]:checked + label:before {
 		width: 98%;
 	}
 	
-	header {
-		nav ul, nav:active ul{
-			width: 111%;
-			//margin: 0 -6%;
-			margin: 0;
-			padding: 0;
-			text-align: center;
-			top: $nav-height;
-			background: #FFF;
-		}
-		nav ul li {
-			width: 100%;
-			display: block;
-			padding: $global-padding 0;
-			background: #FFF;
-			border-bottom: 2px solid $secondary-color;
-		}
-		nav ul li a {
-			font-size: $px-20;
-		}
-	}
-	
-	#menu-icon {
-		display: inline-block;
-		z-index: 11;
-	}
 	
 	form {
 		width: 92%;
@@ -846,18 +821,6 @@ input[type="radio"]:checked + label:before {
 		width: 12.5%;
 	}
 	
-	header {
-		nav ul {
-			display: inline-block;
-		}
-		nav ul li {
-			margin-left: 50px;
-		}
-		
-		#menu-icon {
-			display: none;
-		}
-	}
 	
 	p#hero-phone {
 		width: auto;
