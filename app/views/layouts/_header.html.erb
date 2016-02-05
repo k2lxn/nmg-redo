@@ -1,26 +1,33 @@
 <header>
-<nav>
-  <div class='center-wrap'>
-    
-    <% if yield(:title).empty? %>
-    	<%= link_to image_tag("logo_color.png", alt: "Nationwide Mortgage Group"), 
-    			root_path, class: "hidden" %>
-    <%else%>
-    	<%= link_to image_tag("logo_color.png", alt: "Nationwide Mortgage Group"), 
-    			root_path %>
-    <%end%>
-    
-    <div id="menu-icon">
-    	<div class="bar"></div>
-    	<div class="bar"></div>
-    	<div class="bar"></div>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+  
+    <div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+				data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+    	
+    	<% if yield(:title).empty? %>
+    		<%= link_to image_tag("logo_color.png", alt: "Nationwide Mortgage Group"), 
+    			root_path, class: "hidden navbar-brand" %>
+    	<%else%>
+    		<%= link_to image_tag("logo_color.png", alt: "Nationwide Mortgage Group"), 
+    			root_path, class: "navbar-brand" %>
+    	<%end%>
     </div>
     
-    <ul>
-    	<li><%= link_to "Apply", apply_path %></li>
-      <li><%= link_to "Tools", tools_path %></li>
-      <li><%= link_to "About", about_path %></li>
-    </ul>  
+    <div id="navbar" class="collapse navbar-collapse">
+    	<ul class="nav navbar-nav">
+    		<li><%= link_to "Apply", apply_path %></li>
+      	<li><%= link_to "Tools", tools_path %></li>
+      	<li><%= link_to "About", about_path %></li>
+    	</ul> 
+    </div> 
+    
   </div>
 </nav>
 </header>
