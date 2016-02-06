@@ -77,6 +77,53 @@
 							locals: { tabindex: "9", options_list: @credit_score_options } %>
 			</div>
 		</div>
+		
+		<p class="form-label">Address</p>	
+		<%= f.fields_for :address do |ff| %>		
+			<div class="row">
+				<div class="col-sm-8">
+					<span class="sr-only">Address: Street address line 1</span>
+					<%= ff.text_field :street_1, placeholder: "Street", class: 'form-control' %>
+			
+					<span class="sr-only">Adress: City</span>
+					<%= ff.text_field :city, placeholder: "City", class: 'form-control' %>
+				
+					<span class="sr-only">Address: State</span>
+					<%= ff.select :state, options_for_select(@state_abbrev), class: 'form-control' %>
+					<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "12", options_list: @state_abbrev } %>
+			
+					<span class="sr-only">Address: Zip code</span>
+					<%= ff.text_field :zip_code, placeholder: "Zip code", class: 'form-control' %>
+				</div>
+			</div>			
+		<%end%>
+		
+		<h3>Optional information to help you find the best rate</h3>
+		
+		<div class="row">
+			<div class="col-sm-6">
+				<%= f.label :income, "Est. gross yearly income" %>
+				<%= f.text_field :income, placeholder: "$", class: 'form-control' %>
+			</div>
+			
+			<div class="col-sm-6">
+				<%= f.label :monthly_debt, "Est. monthly debt payment" %>
+				<%= f.text_field :monthly_debt, placeholder: "$", class: 'form-control' %>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-6">
+				<%= f.label :employer, "Current employer" %>
+				<%= f.text_field :employer, class: 'form-control' %>
+			</div>
+			
+			<div class="col-sm-2">
+				<%= f.label :employed_since, "Since" %>
+				<%= f.text_field :employed_since, placeholder: "YYYY", class: 'form-control' %>		
+			</div>	
+		</div>
 			
 		</fieldset>
 			
