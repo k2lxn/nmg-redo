@@ -50,87 +50,140 @@
 				<div class="form-group col-sm-6">
 					<%= f.label :first_name %>
 					<%= f.text_field :first_name, class: 'form-control' %>
-			</div>
-			<div class="form-group col-sm-6">
-				<%= f.label :last_name %>
-				<%= f.text_field :last_name, class: 'form-control' %>
-			</div>	
-		</div> <!-- end .row -->
+				</div>
+				<div class="form-group col-sm-6">
+					<%= f.label :last_name %>
+					<%= f.text_field :last_name, class: 'form-control' %>
+				</div>	
+			</div> <!-- end .row -->
 		
-		<div class="row">
-			<div class="form-group col-sm-8">
-				<%= f.label :email %>
-				<%= f.text_field :email, class: 'form-control' %>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="form-group col-sm-8">
-				<%= f.label :phone, "Best phone contact" %>
-				<%= f.text_field :phone, class: 'form-control' %>
-			</div>	
-		
-			<div class="form-group col-sm-4">
-				<%= f.label :credit_score %>
-				<%= f.select :credit_score, options_for_select(@credit_score_options), class: 'form-control' %>
-				<%= render partial: 'shared/custom_select', 
-							locals: { tabindex: "9", options_list: @credit_score_options } %>
-			</div>
-		</div>
-		
-		<p class="form-label">Address</p>	
-		<%= f.fields_for :address do |ff| %>		
 			<div class="row">
-				<div class="col-sm-8">
+				<div class="form-group col-sm-8">
+					<%= f.label :email %>
+					<%= f.text_field :email, class: 'form-control' %>
+				</div>
+			</div> <!-- end .row -->
+		
+			<div class="row">
+				<div class="form-group col-sm-8">
+					<%= f.label :phone, "Best phone contact" %>
+					<%= f.text_field :phone, class: 'form-control' %>
+				</div>	
+		
+				<div class="form-group col-sm-4">
+					<%= f.label :credit_score %>
+					<%= f.select :credit_score, options_for_select(@credit_score_options), class: 'form-control' %>
+					<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "9", options_list: @credit_score_options } %>
+				</div>
+			</div> <!-- end .row -->
+		
+			<p class="form-label">Address</p>	
+			<%= f.fields_for :address do |ff| %>		
+			<div class="row">
+				<div class="form-group col-sm-8">
 					<span class="sr-only">Address: Street address line 1</span>
 					<%= ff.text_field :street_1, placeholder: "Street", class: 'form-control' %>
-			
+				</div>
+				<div class="form-group col-sm-8">
 					<span class="sr-only">Adress: City</span>
 					<%= ff.text_field :city, placeholder: "City", class: 'form-control' %>
-				
+				</div>
+				<div class="form-group col-sm-8">
 					<span class="sr-only">Address: State</span>
 					<%= ff.select :state, options_for_select(@state_abbrev), class: 'form-control' %>
 					<%= render partial: 'shared/custom_select', 
 							locals: { tabindex: "12", options_list: @state_abbrev } %>
-			
+				</div>
+				<div class="form-group col-sm-8">
 					<span class="sr-only">Address: Zip code</span>
 					<%= ff.text_field :zip_code, placeholder: "Zip code", class: 'form-control' %>
-				</div>
-			</div>			
-		<%end%>
+				</div>		
+			<%end%>	
+			</div> <!-- end .row -->			
+		
 		
 		<h3>Optional information to help you find the best rate</h3>
 		
-		<div class="row">
-			<div class="col-sm-6">
-				<%= f.label :income, "Est. gross yearly income" %>
-				<%= f.text_field :income, placeholder: "$", class: 'form-control' %>
-			</div>
+			<div class="row">
+				<div class="form-group col-sm-6">
+					<%= f.label :income, "Est. gross yearly income" %>
+					<%= f.text_field :income, placeholder: "$", class: 'form-control' %>
+				</div>
 			
-			<div class="col-sm-6">
-				<%= f.label :monthly_debt, "Est. monthly debt payment" %>
-				<%= f.text_field :monthly_debt, placeholder: "$", class: 'form-control' %>
-			</div>
-		</div>
+				<div class="form-group col-sm-6">
+					<%= f.label :monthly_debt, "Est. monthly debt payment" %>
+					<%= f.text_field :monthly_debt, placeholder: "$", class: 'form-control' %>
+				</div>
+			</div> <!-- end .row -->
 		
-		<div class="row">
-			<div class="col-sm-6">
-				<%= f.label :employer, "Current employer" %>
-				<%= f.text_field :employer, class: 'form-control' %>
-			</div>
+			<div class="row">
+				<div class="form-group col-sm-6">
+					<%= f.label :employer, "Current employer" %>
+					<%= f.text_field :employer, class: 'form-control' %>
+				</div>
 			
-			<div class="col-sm-2">
-				<%= f.label :employed_since, "Since" %>
-				<%= f.text_field :employed_since, placeholder: "YYYY", class: 'form-control' %>		
-			</div>	
-		</div>
+				<div class="form-group col-sm-2">
+					<%= f.label :employed_since, "Since" %>
+					<%= f.text_field :employed_since, placeholder: "YYYY", class: 'form-control' %>		
+				</div>	
+			</div> <!-- end .row -->
+			
+		<span class='accent-border'>&nbsp</span>
 			
 		</fieldset>
+		
+		<fieldset>
+			<legend>Co-Borrower information (optional)</legend>
+			<h3>My co-borrower will be ...</h3>
+		
+			<%= f.fields_for :coborrower do |ff| %>
+			<div class="row">
+				<div class="radio col-sm-4">
+					<%= ff.radio_button :spouse, "nil", checked: true %>
+					<%= ff.label :spouse_nil, "No co-borrower" %>
+				</div>
+				<div class="radio col-sm-4">
+					<%= ff.radio_button :spouse, 1 %>
+					<%= ff.label :spouse_1, "spouse" %>	
+				</div>
+				<div class="radio col-sm-4">
+					<%= ff.radio_button :spouse, 0 %>	
+					<%= ff.label :spouse_0, "other" %>
+				</div>
+			</div> <!-- end .row -->
+			<div class="row">
+				<div class="form-group col-sm-6">
+					<%= ff.label :first_name %>	
+					<%= ff.text_field :first_name, class: 'form-control' %>	
+				</div>
+			
+				<div class="form-group col-sm-6">
+					<%= ff.label :last_name %>	
+					<%= ff.text_field :last_name, class: 'form-control' %>	
+				</div>	
+			</div> <!-- end .row -->
+			
+			<div class="row">
+				<div class="form-group col-sm-6">
+					<%= ff.label :credit_score, "Co-borrower's credit score" %>	
+					<%= ff.select :credit_score, options_for_select(@credit_score_options), class: 'form-control' %>	
+					<%= render partial: 'shared/custom_select', 
+							locals: { tabindex: "23", options_list: @credit_score_options } %>
+				</div>	
+			</div>	<!-- end .row --> 
+			
+			<%end%>
+		</fieldset>
+		
+		<%= f.submit "Submit", class: "form-control" %>
 			
 	<%end%> <!-- end form_for @borrower -->
 </div>  <!-- end .container -->
 
 
+<!-- OLD CODE ===========================================
+========================================================= -->
 
 <div id='apply-page'>
 <div class="center-wrap clear-nav">
