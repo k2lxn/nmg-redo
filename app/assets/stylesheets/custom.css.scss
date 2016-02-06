@@ -307,13 +307,11 @@ p:link {
 	margin-left: 0;
 	margin-right: 0;
 }
+.navbar-fixed-top {
+	z-index: 10;
+}
 .navbar-header, #navbar {
 	width: auto;  // overwrite custom style div{width:100%} so bootstrap behaves normally
-}
-
-@media only screen and (min-width: 768px) {  // ie. @screen-sm (bootstrap)
-	// constrain width for desktop so that nav ul can sit right
-
 }
 .navbar-brand {
 	img {
@@ -324,14 +322,28 @@ p:link {
 	margin-top: 12px;
 	margin-left: 15px;
 }
-
 #navbar {
 	text-align: center;
 	ul {
 		margin: 0 auto;
-		li a {
-
-		}
+	}
+	a:hover {
+		color: $accent-color;
+	}
+}
+.navbar-default {
+	background-color: #fff;
+	border: none;
+}
+@media only screen and (max-width: 768px) {
+	nav ul {
+		width: 100%;
+		li {
+			text-align: center;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid $light-grey;
+		}	
 	}
 }
 
