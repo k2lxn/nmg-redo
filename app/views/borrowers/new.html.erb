@@ -135,9 +135,9 @@
 				</div>	
 			</div> <!-- end .row -->
 			
-		<span class='accent-border'>&nbsp</span>
-			
 		</fieldset>
+			
+		<span class='accent-border'>&nbsp</span>
 		
 		<fieldset class="container">
 			<legend>Co-Borrower information (optional)</legend>
@@ -172,7 +172,7 @@
 			
 			<div class="row">
 				<div class="form-group col-sm-6">
-					<%= ff.label :credit_score, "Co-borrower's credit score" %>	
+					<%= ff.label :credit_score, "Co-borrower's credit score", class: 'label-select' %>	
 					<%= ff.select :credit_score, options_for_select(@credit_score_options), class: 'form-control' %>	
 					<%= render partial: 'shared/custom_select', 
 							locals: { tabindex: "23", options_list: @credit_score_options } %>

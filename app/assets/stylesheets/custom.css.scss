@@ -498,10 +498,15 @@ footer {
 /* forms */
 form {
 	height: fit-content;
+	h3 {
+		text-align: left;
+		margin-bottom: 20px;
+	}
 }
 legend {
 	text-align: left;
 	border-bottom: none;
+	padding-top: 20px;
 }
 form label, .form-label {
 	width: 100%;
@@ -536,6 +541,20 @@ fieldset {
 		top: 0;
 	}
 }
+.radio input[type="radio"] {
+	margin-left: $global-padding;
+	margin-right: $global-padding;
+}
+.radio label {
+	margin-left: $global-padding;
+}
+@media only screen and (min-width: 768px) {
+	.radio + .radio {
+		margin-top: 10px;
+	}
+}
+
+
 /*
 @media only screen and (min-width: 768px) {
 	#borrower_zip {
