@@ -449,6 +449,50 @@ p:link {
 
 /* footer */
 footer {
+	color: $dark-grey;
+	background-color: $medium-grey;
+	border-top: 2px solid $dark-grey;
+	padding: $global-padding;
+	
+	h3 {
+		margin-top: $global-padding;
+		margin-bottom: 0;
+		padding-top: 4px;
+		font-size: $px-20;
+	}
+
+	nav {
+		display: inline-block;
+		ul li {
+			border-bottom: none;
+			a {
+				padding: 15px;
+				font-size: $px-18;
+			}
+			a:hover {
+				text-decoration: none;
+			}	
+		}
+	}	
+}
+@media only screen and (min-width: 768px) {
+	footer {
+		.col-sm-6:nth-of-type(2) {
+			text-align: right;
+		}
+		h3 {
+			margin-top: 0;
+		}
+		nav {
+			float: right;
+		}
+	}
+}
+
+
+
+/*
+footer {
 	float: left;
 	min-height: $nav-height;
 	padding: $global-padding;
@@ -489,13 +533,15 @@ footer {
 	text-align: right;
 	margin-bottom: $base-line-height;
 }
+*/
 
-#apply-page {
-	background-color: $light-grey;
-}
+
 
 
 /* forms */
+#apply-page {
+	background-color: $light-grey;
+}
 form {
 	height: fit-content;
 	h3 {

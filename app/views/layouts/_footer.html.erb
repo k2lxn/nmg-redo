@@ -1,20 +1,24 @@
-<footer>
-  <div class='center-wrap'>
-  	<div class="footer-left">
-  		<small>Copyright 2015 Nationwide Mortgage Group</small>
-  		<small>NMLS #899563</small>
+<footer class="footer">
+  <div class="container">
+  	<div class="row">
+  
+  		<div class="col-sm-6">
+  			<small>Copyright 2015 Nationwide Mortgage Group</small>
+  			<small>NMLS #899563</small>
+  		</div>
+  	
+  		<div class="col-sm-6">
+  			<h3>Call toll free: <em>1(800)540-7079</em></h3>
+  			<nav>
+  				<ul class="footer-nav" role="navigation">
+  					<li><%= link_to "Apply", apply_path %></li>
+      			<li><%= link_to "Tools", "#" %></li>
+      			<li><%= link_to "About", about_path %></li>
+  				</ul>
+  			</nav>
   	</div>
   	
-  	<div class="footer-right">
-  		<h3>Call toll free: <em>1(800)540-7079</em></h3>
-  		<nav>
-  			<ul>
-  				<li><%= link_to "Apply", apply_path %></li>
-      		<li><%= link_to "Tools", "#" %></li>
-      		<li><%= link_to "About", about_path %></li>
-  			</ul>
-  		</nav>
-  	</div>
-	</div>
+  	</div>  <!-- end .row -->
+	</div> <!-- end .container -->
 </footer>  
   
