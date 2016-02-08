@@ -1,8 +1,12 @@
 <% provide(:title, "Apply") %>
 
+<div id="apply-page">
 <div class="container-fluid clear-nav">
 
 	<h1>Apply for a Free Quote</h1>
+	
+	<span class='accent-border'>&nbsp</span>
+	
 	<%= render 'shared/error_messages' %>
 	<%= form_for @borrower, url: '/confirm', method: :post do |f| %>
 	
@@ -182,11 +186,11 @@
 			<%end%>
 		</fieldset>
 		
-		<%= f.submit "Submit", class: "form-control" %>
+		<%= f.submit "Submit", class: "form-control button-style" %>
 			
 	<%end%> <!-- end form_for @borrower -->
 </div>  <!-- end .container -->
-
+</div> <!-- end #apply-page -->
 
 <!-- OLD CODE ===========================================
 ========================================================= -->
