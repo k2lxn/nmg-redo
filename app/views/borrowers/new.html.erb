@@ -6,18 +6,18 @@
 	<%= render 'shared/error_messages' %>
 	<%= form_for @borrower, url: '/confirm', method: :post do |f| %>
 	
-		<fieldset>
+		<fieldset class="container">
 			<legend>Home information</legend>
 			<%= f.fields_for :application do |ff| %>
 			<div class="row">
-				<div class="form-group col-sm-6">
-    				<%= ff.label :loan_purpose %>
+				<div class="form-group col-sm-6 select-group">
+    			<%= ff.label :loan_purpose, class: 'label-select' %>
 					<%= ff.select :loan_purpose, options_for_select(@loan_purpose_options), class: 'form-control' %>
 					<%= render partial: 'shared/custom_select', 
 							locals: { tabindex: "0", options_list: @loan_purpose_options } %>
 				</div>
-				<div class="form-group col-sm-6">
-    				<%= ff.label :property_type %>
+				<div class="form-group col-sm-6 select-group">
+    			<%= ff.label :property_type, class: 'label-select' %>
 					<%= ff.select :property_type, options_for_select(@property_type_options), class: 'form-control' %>
 					<%= render partial: 'shared/custom_select', 
 							locals: { tabindex: "1", options_list: @property_type_options } %>	
@@ -44,7 +44,7 @@
 		
 		<span class='accent-border'>&nbsp</span>
 	
-		<fieldset>
+		<fieldset class="container">
 			<legend>Borrower information</legend>
 			<div class="row">
 				<div class="form-group col-sm-6">
@@ -58,47 +58,53 @@
 			</div> <!-- end .row -->
 		
 			<div class="row">
-				<div class="form-group col-sm-8">
-					<%= f.label :email %>
-					<%= f.text_field :email, class: 'form-control' %>
-				</div>
-			</div> <!-- end .row -->
-		
-			<div class="row">
-				<div class="form-group col-sm-8">
-					<%= f.label :phone, "Best phone contact" %>
-					<%= f.text_field :phone, class: 'form-control' %>
-				</div>	
-		
-				<div class="form-group col-sm-4">
-					<%= f.label :credit_score %>
-					<%= f.select :credit_score, options_for_select(@credit_score_options), class: 'form-control' %>
-					<%= render partial: 'shared/custom_select', 
+				<div class="col-sm-6">
+					<div class="form-group">
+						<%= f.label :email %>
+						<%= f.text_field :email, class: 'form-control' %>
+					</div>
+					<div class="form-group">
+						<%= f.label :phone, "Best phone contact" %>
+						<%= f.text_field :phone, class: 'form-control' %>
+					</div>		
+				</div>		
+				<div class="col-sm-6">
+					<div class="form-group">
+						<%= f.label :credit_score, class: 'label-select'  %>
+						<%= f.select :credit_score, options_for_select(@credit_score_options), class: 'form-control' %>
+						<%= render partial: 'shared/custom_select', 
 							locals: { tabindex: "9", options_list: @credit_score_options } %>
-				</div>
+					</div>	
+				</div>	
 			</div> <!-- end .row -->
 		
 			<p class="form-label">Address</p>	
 			<%= f.fields_for :address do |ff| %>		
-			<div class="row">
-				<div class="form-group col-sm-8">
-					<span class="sr-only">Address: Street address line 1</span>
-					<%= ff.text_field :street_1, placeholder: "Street", class: 'form-control' %>
-				</div>
-				<div class="form-group col-sm-8">
-					<span class="sr-only">Adress: City</span>
-					<%= ff.text_field :city, placeholder: "City", class: 'form-control' %>
-				</div>
-				<div class="form-group col-sm-8">
-					<span class="sr-only">Address: State</span>
+			<div class="row">		
+				<div class="col-sm-6">
+					<div class="form-group">
+						<span class="sr-only">Address: Street address line 1</span>
+						<%= ff.text_field :street_1, placeholder: "Street", class: 'form-control' %>
+					</div>
+					<div class="form-group">
+						<span class="sr-only">Adress: City</span>
+						<%= ff.text_field :city, placeholder: "City", class: 'form-control' %>
+					</div>
+				</div>				
+			
+				<div class="col-sm-6">
+					<div class="form-group col-xs-6" id="borrower_address_state">
+					<!-- <span class="sr-only">Address: State</span> -->
+					<%= ff.label :state, class: 'label-select'%>
 					<%= ff.select :state, options_for_select(@state_abbrev), class: 'form-control' %>
 					<%= render partial: 'shared/custom_select', 
 							locals: { tabindex: "12", options_list: @state_abbrev } %>
-				</div>
-				<div class="form-group col-sm-8">
+					</div>
+					<div class="form-group col-xs-6" id="borrower_zip">
 					<span class="sr-only">Address: Zip code</span>
 					<%= ff.text_field :zip_code, placeholder: "Zip code", class: 'form-control' %>
-				</div>		
+					</div>	
+				</div>	
 			<%end%>	
 			</div> <!-- end .row -->			
 		
@@ -123,7 +129,7 @@
 					<%= f.text_field :employer, class: 'form-control' %>
 				</div>
 			
-				<div class="form-group col-sm-2">
+				<div class="form-group col-xs-3 col-sm-2">
 					<%= f.label :employed_since, "Since" %>
 					<%= f.text_field :employed_since, placeholder: "YYYY", class: 'form-control' %>		
 				</div>	
@@ -133,7 +139,7 @@
 			
 		</fieldset>
 		
-		<fieldset>
+		<fieldset class="container">
 			<legend>Co-Borrower information (optional)</legend>
 			<h3>My co-borrower will be ...</h3>
 		
