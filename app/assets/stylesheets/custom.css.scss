@@ -149,12 +149,12 @@ p#hero-phone {
   width: 100%;
   box-sizing: border-box;
 }
-
+*/
 html, body {
 	height: 100%;
-	float: left;
+	//float: left;
 }
-*/
+
 body {
 	text-align: center;
 	background-color: #FFF;
@@ -898,7 +898,7 @@ input[type="radio"]:checked + label:before {
 }
 
 // Content-specific tweak for #hero-phone, 695px - 740px
-@media only screen and (min-width: 43.438em) and (max-width: 46.25em) {
+/*@media only screen and (min-width: 43.438em) and (max-width: 46.25em) {
 	#hero-phone {
 			position: absolute;
 			top: -($px-30);
@@ -907,7 +907,7 @@ input[type="radio"]:checked + label:before {
 			width: fit-content;
 			box-sizing: border-box;
 		}
-}
+}*/
 
 // Medium and Large screens, 695px+
 @media only screen and (min-width: 43.438em) {
@@ -931,12 +931,13 @@ input[type="radio"]:checked + label:before {
 		width: 12.5%;
 	}
 	
-	
+/*	
 	p#hero-phone {
 		width: auto;
 		position: absolute;
 		right: 0;
 	}
+*/
 	
 	.pitch {
 		.icon {
