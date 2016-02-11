@@ -50,189 +50,163 @@ $header-font-family: 'Sofia Pro Light', Quicksand, sans-serif;
 body {
 	font-family: $body-font-family; 
 }
-
 h1, h2 {
 	font-family: $header-font-family;
 	font-weight: normal;
 }
-
 h3, h4 {
 	font-family: $body-font-family;
 	font-weight: 700;
 }
-
 h1 {
 	font-size: $px-30;
 }
-
 h2 {
 	font-size: $px-20;
 }
-
 h3 {
 	font-size: $px-18;
 }
-
 h4 {
 	font-size: 0.95em;
 }
-
 h1#hero-blurb {
 	font-family: $body-font-family;
 	font-size: $px-24;
 	font-weight: normal;
 	line-height: 1.6em;
 }
-
 p {
 	font-size: 1em;
 	line-height: $base-line-height;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;  // for telephone numbers in iOS
+p#hero-phone {
+	font-family: $header-font-family;
+	font-size: $px-24;
+	color: $dark-grey;
+	padding: 15px;
 }
-
-.nav li a {
-	font-size: 1.25em;
-}
-
-@media only screen and (min-width: 768px) {  // ie. @screen-sm (bootstrap)
-	.nav li a {
-		font-size: 1em;
+@media only screen and (min-width: 768px) { // ie. @screen-sm (bootstrap)
+	p#hero-phone {
+		text-align: right;
+		margin-right: 15px;
 	}
 }
-
+ul {
+	font-size: $px-16;
+}	
+small {
+	font-size: 100%;
+}
 em {
 	font-style: normal;
 	color: $secondary-accent-color;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;  // for telephone numbers in iOS
+}
+a:hover {
+	color: $accent-color;
+}
+.nav li a {
+	font-size: 1.25em;
+}
+@media only screen and (min-width: 768px) {  
+	.nav li a {
+		font-size: 1em;
+	}
+}
 nav li a {
  font-size: $px-16;
 }
-
 header nav li a {
 	color: $dark-grey;
 }
-
 footer nav li a {
 	color: $primary-color;
 }
-
 fieldset legend {
 	font-family: $header-font-family;
 	font-size: $px-22;
 	color: $dark-grey;
 }
-
 form label, .form-label {
 	font-size: $px-18;
 	font-weight: 400;
 }
 
-p#hero-phone {
-	font-family: $header-font-family;
-	font-size: $px-24;
-	color: $dark-grey;
-	padding: 0;
-}
-
 
 /* global */
-
-/*html, body, div, form, header, footer, nav, section, aside, p {
-	position: relative;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-*/
 html, body {
 	height: 100%;
-	//float: left;
-}
 
+}
 body {
-	text-align: center;
+	//text-align: center;
 	background-color: #FFF;
 }
-
-h1 {
-	margin-bottom: $base-line-height;
+.container, .container-fluid {
+	max-width: 1000px;
 }
+.clear-nav {
+	padding-top: $nav-height;
+}
+
+//h1 {
+//	margin-bottom: $base-line-height;
+//}
 
 a {
 	margin:0; padding:0;
 }
-
-a:hover {
-	color: $accent-color;
-}
-
-p {
-	text-align: left;
-	padding: $global-padding;
-}
-
 ul {
 	width: fit-content;
 	text-align: left;
 	list-style: circle;
 	margin:0;padding:0;
 }
+//ul p {
+//	font-size: $px-16;
+//	max-width: 22em;
+//	padding-left: $global-padding;
+//}
 
-ul p {
-	font-size: $px-16;
-	max-width: 22em;
-	padding-left: $global-padding;
+img {
+	display: block;
 }
-
-.center-wrap {
-	width: 90%;
-	min-height: 100%;
+.img-sm {
+	max-height: 6em;
+}
+.img-xs {
+	max-height: 4.8em;
+}
+.img-center {
 	margin: 0 auto;
-	margin-bottom: -($nav-height);
 }
-
-.center {
-	margin: 0 auto;
-}
-
-.clear-nav {
-	padding-top: $nav-height;
+@media only screen and (min-width: 768px) {
+	.img-sm {
+		max-height: 7.5em;
+	}
+	.img-xs {
+		max-height: 6em;
+	}
 }
 
 .hidden {
 	visibility: hidden;
 }
-
+.vert-center {
+	vertical-align: middle;
+}
 section {
-	display: block;
-	float: left;
+	//display: block;
+	//float: left;
 	border-bottom: 1.5px solid $dark-grey;
 }
 section:last-of-type {
 	border-bottom: none;
 }
-
-/*
-.row {
-	width: 100%;
-	position: relative;
-	display: block;
-	float: left;
-}
-*/
-
-.col-1-2, .col-2-2, .col-1-3, .col-2-3, .col-1-8 {
-	float: left;
-	display: inline-block;
-	padding: 0 $global-padding;
-}
-
 .accent-border {
 	width: 100%;
 	display: block;
@@ -252,14 +226,14 @@ section:last-of-type {
   @include border-radius(27px);
 }
 .button-style:hover {
-	color: #FFF;
 	background-color: $primary-dark;
 }
-.clear-btn {
-	height: 15px;
-	display: block;
-	margin-bottom: $base-line-height;
-}
+
+//.clear-btn {
+//	height: 15px;
+//	display: block;
+//	margin-bottom: $base-line-height;
+//}
 
 nav {
 	ul {
@@ -274,10 +248,6 @@ nav {
   } 
 }
 
-aside p {
-	padding: 0;
-}
-
 .table {
 	display: table;
 }
@@ -286,6 +256,11 @@ aside p {
 }
 .td {
 	display: table-cell;
+}
+@media only screen and (max-width: 768px) {
+	.table, .tr, .td {
+		display: block;
+	}
 }
 
 .stripe {
@@ -302,6 +277,7 @@ p:link {
 	padding:0; margin:0;
 }
 
+
 /* header */
 .container > .navbar-header {
 	height: $nav-height;
@@ -309,7 +285,7 @@ p:link {
 	margin-right: 0;
 }
 .navbar-fixed-top {
-	z-index: 10;
+	z-index: 100;
 }
 .navbar-header, #navbar {
 	width: auto;  // overwrite custom style div{width:100%} so bootstrap behaves normally
@@ -350,43 +326,96 @@ p:link {
 
 
 /* home */
-#home {
+//#home {
 	#hero-logo {
-		//width: 37.5em;
-		width: 40em;
+		width: 100%;
 		position: relative;
 		top: -($nav-height - $global-padding);
 		left: -2em;
 	}
-	#hero-row {
-		overflow: visible;
-		height: 12.5em;
+	//.tr {
+	//	margin-bottom: (2*$base-line-height);
+	//}
+	//.td:first-child {
+	//	width: 33%;
+	//	vertical-align: middle;
+	//}
+	//.td:nth-child(2) {
+	//	width: 66%;
+	//}	
+//}
+#hero-phone {
+	position: absolute;
+	top: 0;
+}
+@media only screen and (max-width: 768px) {
+	#hero-phone {
+		z-index: 200;
 	}
-	.tr {
-		margin-bottom: (2*$base-line-height);
-	}
-	.td:first-child {
-		width: 33%;
-		vertical-align: middle;
-	}
-	.td:nth-child(2) {
-		width: 66%;
-	}	
+}
+#hero-blurb {
+	padding: 0 15px;
 }
 
-.pitch {
-	width: 80%;
-	max-width: 50.0em;
-	margin: 0 auto;
-	padding: ($global-padding * 3) 0;
-	position: relative;
-	clear: left;
-	border-top: 2px dotted $accent-color;
-	
-	img {
-		max-height: 6em;
-		
+@media only screen and (min-width: 768px) {
+	#hero-logo {
+		width: 40em;
+		position: relative;
+		top: -(3.750em - (1.33em/2)); /* -($nav-height - $global-padding) */
+		/*left: -2em;*/
 	}
+	#hero-phone {
+		position: relative;
+		text-align: right;
+		margin-right: 15px;
+
+	}
+	#hero-button {
+		width: 33%;
+	}
+}
+
+/* .pitch */
+.pitch {
+	border-top: 2px dotted $secondary-accent-color;
+	p {
+		padding: 0 15px;
+		line-height: 1.6em;
+	}
+	ul {
+		list-style-position: outside;
+		padding-left: 15px;
+		padding-right: 0;
+		margin-right: -15px;
+		line-height: 1.85em;	
+	}
+	ul li {
+		margin-bottom: $global-padding;
+	}
+	small{
+		width: 125%;
+	}
+}
+.pitch:first-of-type {
+	border-top: none;
+}
+@media only screen and (min-width: 768px) {
+	.pitch {
+		h2 {
+			font-size: 1.5em;
+		}
+		ul {
+			padding-left: 0;
+			padding-right: 45px;
+		}
+		.pitch-icon {
+			float: right;
+		}
+	}
+}	
+	
+	
+/*
 	.blurb {
 		position: relative;
 		text-align: left;
@@ -445,7 +474,7 @@ p:link {
 .pitch:first-of-type {
 	border-top: none;
 }
-
+*/
 
 /* footer */
 footer {
@@ -810,13 +839,14 @@ input[type="radio"]:checked + label:before {
 /* Media queries */
 
 // Small screens, 695px
+/*
 @media only screen and (max-width: 43.438em) {  
 	.center-wrap {
 		width: 98%;
 	}
 	
 	
-/*	form {
+	form {
 		width: 92%;
 		max-width: 25em;
 		margin: 0 auto;
@@ -832,7 +862,7 @@ input[type="radio"]:checked + label:before {
 			float: left;
 		}
 	}
-*/	
+	
 	#home {
 		#hero-row {
 			height: auto;
@@ -869,6 +899,7 @@ input[type="radio"]:checked + label:before {
 		}
 	}
 }
+*/
 
 // Older Phone screens, portrait (extra small)
 @media only screen and (max-width: 376px) {
@@ -878,6 +909,7 @@ input[type="radio"]:checked + label:before {
 }
 
 // Content-specific tweak for #home .tr
+/*
 @media only screen and (max-width: 40em) {
 	.table, .tr {
 		display: block;
@@ -896,6 +928,7 @@ input[type="radio"]:checked + label:before {
 		}	
 	}	
 }
+*/
 
 // Content-specific tweak for #hero-phone, 695px - 740px
 /*@media only screen and (min-width: 43.438em) and (max-width: 46.25em) {
@@ -910,6 +943,7 @@ input[type="radio"]:checked + label:before {
 }*/
 
 // Medium and Large screens, 695px+
+/*
 @media only screen and (min-width: 43.438em) {
 	.col-1-2 {
 		width: 50%;
@@ -931,13 +965,13 @@ input[type="radio"]:checked + label:before {
 		width: 12.5%;
 	}
 	
-/*	
+	
 	p#hero-phone {
 		width: auto;
 		position: absolute;
 		right: 0;
 	}
-*/
+
 	
 	.pitch {
 		.icon {
@@ -969,7 +1003,7 @@ input[type="radio"]:checked + label:before {
 		}		
 	}
 }
-
+*/
 // Medium screens only, 695px - 1024px
 @media only screen and (min-width: 43.438em) and (max-width: 64em) {
 	

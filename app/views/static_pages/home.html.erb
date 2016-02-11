@@ -1,64 +1,61 @@
 <div class="container-fluid clear-nav">
 
 <section id='home'>
-  <div class='row' id='hero-row'>  
-		<div class='col-2-3'>
+  <div class='row'>  
+		<div class='col-sm-8'>
     	<%= image_tag('hero_logo.png', alt: "Nationwide Mortgage Group", id: 'hero-logo') %>
     </div>    	
     <p id='hero-phone'>1(800)540-7079</p> 
   </div>
   
   <div class='table'> 
-  <div class='row tr'>
-  	<div class='td'>
-  		<%= link_to "Get your quote", apply_path, id: 'hero-button', 
-  						class: 'button-style' %>			
-  	</div>
-  	<div class='td'>
-  		<h1 id='hero-blurb'>  
-       	Whether you're buying a home or refinancing, 
-      	<strong>Nationwide Mortgage Group</strong> is here to find you the 
-      	<em>lowest rates</em> & <em>lowest closing costs</em> on your mortgage.
-    	</h1>
-  	</div>
-  </div> 
-  </div>    <!-- close .table-wrap -->   
+  	<div class='row tr'>
+  		<div id='hero-button' class='td text-center vert-center'>
+  			<%= link_to "Get your quote", apply_path, class: 'button-style' %>			
+  		</div>
+  		<div class='td'>
+  			<h1 id='hero-blurb' class="text-center">  
+       		Whether you're buying a home or refinancing, 
+      		<strong>Nationwide Mortgage Group</strong> is here to find you the 
+      		<em>lowest rates</em> & <em>lowest closing costs</em> on your mortgage.
+    		</h1>
+  		</div>
+  	</div> <!-- end .row -->
+  </div>    <!-- close .table -->   
 </section>
 
-
 <!-- Why Nationwide? -->  
-<section class="container">   
-  
-  <div class='pitch'>      
-    <div class='icon'>
-      <%= image_tag('keys_icon.png', alt: 'icon: house keys') %>
-    </div>
-        
-    <h2>You don't need perfect credit or a lot up front to get the home you want</h2>
-    
-    <div class='blurb'>
-      It's easier than you think to qualify with our Government 
-      & non-agency Fresh Start loan programs:
-    </div>
-      
-    <div class='row'>
-      <div class='col-1-2'>
-      	<ul>
+<section>     
+	<div class="pitch">
+		<div class="row">
+			<div class="col-sm-3">
+				<%= image_tag('keys_icon.png', alt: 'icon: house keys', class: 'img-sm img-center pitch-icon') %>
+			</div>
+			<div class="col-sm-6">
+				<h2 class="text-center">You don't need perfect credit or a lot up front to get the home you want</h2>
+    		<p>
+     			It's easier than you think to qualify with our Government 
+      		& non-agency Fresh Start loan programs:
+    		</p>
+			</div>
+			<div class="col-sm-3 hidden-xs"></div>	
+    </div> <!-- end .row -->
+    <div class="row">
+    	<div class="col-xs-6">
+    		<ul class="pull-right">
        		<li>FHA loans</li>
         	<li>HARP loans</li>
         	<li>VA loans</li>
         	<li>USDA Rural Housing</li>
         	<li>& more</li>
      	 	</ul>
-      </div>
-         
-      <aside class='col-1-2 sidebar'>  
-       	<%= image_tag('underwater_house_icon.png', alt: 'icon') %>
-        <p>Even underwater homeowners can refinance with HARP options</p>
-    	</aside>   <!-- close .col-1-2 -->
-    </div>   <!-- close .row -->  
-    
-  </div>   <!-- close .pitch -->
+    	</div>
+    	<div class="col-xs-4 text-center">
+    		<%= image_tag('underwater_house_icon.png', alt: 'icon', class: 'img-xs img-center') %>
+       	<small>Even underwater homeowners can refinance with HARP options</small>
+    	</div>
+    </div> <!-- end .row -->
+	</div> <!-- end .pitch -->
 
 	<!-- pitch 2 -->
 	<div class='pitch'>        
