@@ -388,6 +388,11 @@ p:link {
 .pitch {
 	padding: 40px 0;
 	border-top: 2px dotted $accent-color;
+	h2, p {
+		max-width: 465px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	p {
 		padding: 0 15px;
 		line-height: 1.6em;
