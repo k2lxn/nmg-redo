@@ -92,7 +92,7 @@ p#hero-phone {
 		margin-right: 15px;
 	}
 }
-ul {
+.pitch ul {
 	font-size: $px-18;
 }	
 small {
@@ -109,8 +109,13 @@ a {
 a:hover {
 	color: $accent-color;
 }
-.nav li a {
-	font-size: 1.25em;
+.nav {
+	ul {
+		font-size: $px-16;
+	}
+	li a {
+		font-size: 1.25em;
+	}	
 }
 @media only screen and (min-width: 768px) {  
 	.nav li a {
@@ -381,7 +386,8 @@ p:link {
 
 /* .pitch */
 .pitch {
-	border-top: 2px dotted $secondary-accent-color;
+	padding: 40px 0;
+	border-top: 2px dotted $accent-color;
 	p {
 		padding: 0 15px;
 		line-height: 1.6em;
