@@ -58,33 +58,42 @@
 	</div> <!-- end .pitch -->
 
 	<!-- pitch 2 -->
-	<div class='pitch'>        
-  	<div class='icon'>
-    	<%= image_tag('piggybank_icon.png', alt: 'icon: piggy bank') %>
-    </div>
-
-    <h2>Take advantage of mortgage rates at their lowest in decades!</h2>
-    <div class='blurb'>
-      <p>
-        Free up cash for life's other big milestones by refinancing
-        your mortgage. We can help you save, consolidate debt, or cash out.
-      </p>   
-      <%= image_tag('grad_car_icon.png', alt: 'icon: graduate and new car') %>
-    </div>   <!-- close .blurb --> 
-  </div>   <!-- close .pitch -->
+	<div class='pitch'>
+		<div class='row'>
+			<div class="col-sm-3">
+				<%= image_tag('piggybank_icon.png', alt: 'icon: piggy bank', class: "img-sm img-center pitch-icon") %>
+			</div>
+			<div class="col-sm-6">
+				<h2 class="text-center">
+					Take advantage of mortgage rates at their lowest in decades!
+				</h2>
+    		<p>
+     			Free up cash for life's other big milestones by refinancing
+        	your mortgage. We can help you save, consolidate debt, or cash out.
+    		</p>
+			</div>
+			<div class="col-sm-3 hidden-xs">
+				<%= image_tag('grad_car_icon.png', alt: 'icon: graduate and new car', class: "img-sm") %>
+			</div>	
+		</div> <!-- end .row -->
+	</div>   <!-- end .pitch -->	  
       
   <!-- pitch 3 -->    
   <div class='pitch'>       
-    <div class='icon'>
-      <%= image_tag('brain_icon.png', alt: 'icon: brain') %>
-    </div>
-         
-    <h2>Concierge Mortgage Services</h2>
-    <div class='blurb'>
-      We're experts. We can help you navigate the options and find
-      the best deal for you. Call now or click below to get a
-      quote and get started!
-    </div>   <!-- close .blurb --> 
+  	<div class="row">
+			<div class="col-sm-3">
+				<%= image_tag('brain_icon.png', alt: 'icon: brain', class: "img-sm img-center pitch-icon") %>
+			</div>
+			<div class="col-sm-6">
+				<h2 class="text-center">Concierge Mortgage Services</h2>
+    		<p>
+     			We're experts. We can help you navigate the options and find
+      		the best deal for you. Call now or click below to get a
+      		quote and get started!
+    		</p>
+			</div>
+			<div class="col-sm-3 hidden-xs"></div>	
+    </div> <!-- end .row -->
 	</div>   <!-- close .pitch -->
       
   <%= link_to "Get your quote", apply_path, class: 'button-style' %>

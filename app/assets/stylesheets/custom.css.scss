@@ -312,6 +312,10 @@ p:link {
 	background-color: #fff;
 	border: none;
 }
+.nav > li > a {
+	padding-left: 30px;
+	padding-right: 0;
+}
 @media only screen and (max-width: 768px) {
 	nav ul {
 		width: 100%;
