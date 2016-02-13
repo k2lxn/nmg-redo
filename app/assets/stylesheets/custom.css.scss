@@ -335,8 +335,8 @@ p:link {
 	#hero-logo {
 		width: 100%;
 		position: relative;
-		top: -($nav-height - $global-padding);
-		left: -2em;
+		//top: -($nav-height - $global-padding);
+		//left: -2em;
 	}
 	//.tr {
 	//	margin-bottom: (2*$base-line-height);
@@ -358,6 +358,11 @@ p:link {
 		z-index: 200;
 	}
 }
+@media only screen and (max-width: 768px) {
+	#home .table {
+		margin-top: 30px;
+	}
+}	
 #hero-blurb {
 	padding: 0 15px;
 }
@@ -366,7 +371,7 @@ p:link {
 	#hero-logo {
 		width: 40em;
 		position: relative;
-		top: -(3.750em - (1.33em/2)); /* -($nav-height - $global-padding) */
+		top: -($nav-height - $global-padding);
 		/*left: -2em;*/
 	}
 	#hero-phone {
