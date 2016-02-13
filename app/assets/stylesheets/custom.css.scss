@@ -108,6 +108,10 @@ a {
 }
 a:hover {
 	color: $accent-color;
+	text-decoration: none;
+}
+a.button-style:hover {
+	color: #FFF;
 }
 .nav {
 	ul {
@@ -226,8 +230,7 @@ section:last-of-type {
   background-color: $primary-color;
   color: #FFF;
   font-size: $px-20;
-  padding: 15px 25px;
-  
+  padding: 15px 25px;  
   @include border-radius(27px);
 }
 .button-style:hover {
