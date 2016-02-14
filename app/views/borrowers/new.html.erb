@@ -14,13 +14,13 @@
 			<legend>Home information</legend>
 			<%= f.fields_for :application do |ff| %>
 			<div class="row">
-				<div class="form-group col-sm-6 select-group">
+				<div class="form-group col-sm-6 select-group text-center">
     			<%= ff.label :loan_purpose, class: 'label-select' %>
 					<%= ff.select :loan_purpose, options_for_select(@loan_purpose_options), class: 'form-control' %>
 					<%= render partial: 'shared/custom_select', 
 							locals: { tabindex: "0", options_list: @loan_purpose_options } %>
 				</div>
-				<div class="form-group col-sm-6 select-group">
+				<div class="form-group col-sm-6 select-group text-center">
     			<%= ff.label :property_type, class: 'label-select' %>
 					<%= ff.select :property_type, options_for_select(@property_type_options), class: 'form-control' %>
 					<%= render partial: 'shared/custom_select', 
@@ -72,7 +72,7 @@
 						<%= f.text_field :phone, class: 'form-control' %>
 					</div>		
 				</div>		
-				<div class="col-sm-6">
+				<div class="col-sm-6 text-center">
 					<div class="form-group">
 						<%= f.label :credit_score, class: 'label-select'  %>
 						<%= f.select :credit_score, options_for_select(@credit_score_options), class: 'form-control' %>
@@ -96,7 +96,7 @@
 					</div>
 				</div>				
 			
-				<div class="col-sm-6">
+				<div class="col-sm-6 text-center">
 					<div class="form-group col-xs-6" id="borrower_address_state">
 					<!-- <span class="sr-only">Address: State</span> -->
 					<%= ff.label :state, class: 'label-select'%>
@@ -175,7 +175,7 @@
 			</div> <!-- end .row -->
 			
 			<div class="row">
-				<div class="form-group col-sm-6">
+				<div class="form-group col-sm-6 text-center">
 					<%= ff.label :credit_score, "Co-borrower's credit score", class: 'label-select' %>	
 					<%= ff.select :credit_score, options_for_select(@credit_score_options), class: 'form-control' %>	
 					<%= render partial: 'shared/custom_select', 
