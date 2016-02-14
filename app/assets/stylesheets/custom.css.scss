@@ -148,12 +148,28 @@ form label, .form-label {
 
 /* global */
 html, body {
+	position: relative;
 	height: 100%;
-
 }
 body {
-	//text-align: center;
 	background-color: #FFF;
+}
+.wrapper {
+	min-height: 100%;
+	margin-bottom: -127px;
+}
+.wrapper:after {
+	content: "";
+	display: block;
+	height: 127px;
+}
+@media only screen and (min-width: $screen-sm) {
+	.wrapper {
+		margin-bottom: -85px;
+	}
+	.wrapper:after {
+		height: 85px;
+	}
 }
 .container, .container-fluid {
 	max-width: 1000px;
@@ -528,39 +544,10 @@ p:link {
 }
 
 
-/* About page */
-#about-us {
-	p, h2, h3, h4 {
-		text-align: left;
-		padding-left: $global-padding;
-	}	
-	h4 {
-		margin-top: $global-padding / 2;
-		margin-bottom: $global-padding / 2;
-	}
-	p {
-		padding-top: 0;
-		background: #FFF;
-	}
-	strong {
-		font-weight: normal;
-		color: $secondary-accent-color;
-	}
-	h2 {
-		color: $dark-grey;
-		background: $light-grey;
-		margin-bottom: $global-padding;
-	}
-	h4 {
-		color: $primary-color;
-	}	
-	.row {
-		margin-bottom: $global-padding;
-	}
-}
-
 /* footer */
 footer {
+	width: 100%;
+	margin:0;
 	color: $dark-grey;
 	background-color: $medium-grey;
 	border-top: 2px solid $dark-grey;
