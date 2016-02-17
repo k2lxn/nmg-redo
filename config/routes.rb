@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 	
 	get '/apply', to: "borrowers#new"
 	
-	post '/confirm', to: "borrowers#create"
+	post '/apply', to: "borrowers#create"
+	
+	get '/confirm', to: "static_pages#confirm"
 	
 	get '/tools', to: "static_pages#tools"
 	

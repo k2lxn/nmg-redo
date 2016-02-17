@@ -14,16 +14,29 @@ class BorrowersController < ApplicationController
 
   def create
   	@borrower = Borrower.new(borrower_params)
-  	if @borrower.save 
-  		@borrower.save_application 
-  	else
-  		@loan_purpose_options = loan_purpose_options
-  		@property_type_options = property_type_options
-  		@credit_score_options = credit_categories
-  		@state_abbrev = state_abbreviations
+  	
+  	respond_to do |format|
+  		if @borrower.save 
+  			format.html { redirect_to(confirm_path) }
+  			format.json { render json: confirm_path, status: :created, location: @borrower}
+  			
+  			# Update Google spreadsheet
+  			@borrower.save_application 
+  			
+  			# Ping lender's email
+  			LenderMailer.lead_alert(@borrower).deliver
+  			
+  		else
+  			@loan_purpose_options = loan_purpose_options
+  			@property_type_options = property_type_options
+  			@credit_score_options = credit_categories
+  			@state_abbrev = state_abbreviations
   		
-  		render 'new'
-  	end		
+  			#render 'new'
+  			format.html { render action: 'new' }
+  			format.json { render json: @borrower.errors, status: :unprocessable_entity }
+  		end				
+  	end	
   end
   
   private 
