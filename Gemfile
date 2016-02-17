@@ -36,6 +36,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Read/Write Google Drive files and spreadsheets
 gem 'google_drive', '~> 1.0'
 
+# Figaro
+gem 'figaro'
+
 group :development, :test do
 	# Use sqlite3 as the development and test database for Active Record
 	gem 'sqlite3', '1.3.11'
