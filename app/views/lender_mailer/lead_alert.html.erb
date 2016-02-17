@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>New loan applicant:</p>
+    <h3><%= @borrower.first_name %> <%= @borrower.last_name %></h3>
+    <p>
+      <ul>
+      	<li>Loan purpose: <%= @borrower.application.loan_purpose %></li>
+      	<li>Property type: <%= @borrower.application.property_type %></li>
+      </ul>
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
