@@ -26,28 +26,31 @@ class Borrower < ActiveRecord::Base
 		auth.client_secret = ENV["google_client_secret"]
 		auth.scope = "https://www.googleapis.com/auth/drive" +
     "https://spreadsheets.google.com/feeds/"
-    auth.redirect_uri = "http://example.com/redirect"
+    auth.redirect_uri = "http://localhost:3000"
     auth.refresh_token = ENV["google_refresh_token"]
     auth.fetch_access_token!
     session = GoogleDrive.login_with_oauth(auth.access_token)
 		
 		# Get worksheet from spreadsheet
-		loan_ws = session.spreadsheet_by_key("13L7-_UACtzqvIukzx14qNoDPe1zdwkBZDQxOhQL2XtY").worksheets[0]
-		contact_ws = session.spreadsheet_by_key("13L7-_UACtzqvIukzx14qNoDPe1zdwkBZDQxOhQL2XtY").worksheets[1]
+		loan_ws = session.spreadsheet_by_key(ENV["spreadsheet_key"]).worksheets[0]
+		contact_ws = session.spreadsheet_by_key(ENV["spreadsheet_key"]).worksheets[1]
 		
 		next_row = loan_ws.num_rows + 1
 		
+		# Write timestamp to Loan worksheet
+		loan_ws[next_row, 1] = self.created_at.to_s
+		
 		# Write borrower name (first and last) to Loan worksheet
-		loan_ws[next_row, 1] = self.first_name
-		loan_ws[next_row, 2] = self.last_name
+		loan_ws[next_row, 2] = self.first_name
+		loan_ws[next_row, 3] = self.last_name
 		
 		# Write loan information (i.e. Application data) to Loan worksheet
-		loan_ws[next_row, 3] = self.credit_score
-		loan_ws[next_row, 4] = self.application.loan_purpose
-		loan_ws[next_row, 5] = self.application.property_type
-		loan_ws[next_row, 6] = self.application.purchase_price
-		loan_ws[next_row, 7] = self.application.budget
-		loan_ws[next_row, 8] = self.application.zip_code
+		loan_ws[next_row, 4] = self.credit_score
+		loan_ws[next_row, 5] = self.application.loan_purpose
+		loan_ws[next_row, 6] = self.application.property_type
+		loan_ws[next_row, 7] = self.application.purchase_price
+		loan_ws[next_row, 8] = self.application.budget
+		loan_ws[next_row, 9] = self.application.zip_code
 		
 		loan_ws.save
 		
