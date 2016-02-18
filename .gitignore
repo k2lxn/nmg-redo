@@ -19,5 +19,6 @@
 # Ignore application configuration
 /config/application.yml
 config.json
+/config/config.json
 /config/secrets.yml
 /config/client_secrets.json
