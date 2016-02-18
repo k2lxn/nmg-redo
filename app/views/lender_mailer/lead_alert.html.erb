@@ -10,8 +10,21 @@
       <ul>
       	<li>Loan purpose: <%= @borrower.application.loan_purpose %></li>
       	<li>Property type: <%= @borrower.application.property_type %></li>
-      </ul>
-    </p>
-    <p>Thanks for joining and have a great day!</p>
+      	<li>Zip: <%= @borrower.application.zip_code %></li>
+				<li>Budget: <%= @borrower.application.budget %></li>
+				<li>Credit score: <%= @borrower.credit_score %></li>		
+			</ul>
+		</p>
+		
+		<h4>Contact information</h4>
+		<p>
+			<ul>
+				<li>Email: <%= @borrower.email %></li>
+				<li>Phone: <%= @borrower.phone %></li>
+			</ul>
+		</p>
+		
+		<p> View the data in <a href="https://docs.google.com/spreadsheets/d/13L7-_UACtzqvIukzx14qNoDPe1zdwkBZDQxOhQL2XtY/edit?usp=sharing">Google Docs ></a>
+		</p>
   </body>
 </html>
