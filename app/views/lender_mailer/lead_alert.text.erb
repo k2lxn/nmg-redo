@@ -1,6 +1,19 @@
-New loan applicant 
-===============================================
-<%= @borrower.first_name %> <%= @borrower.last_name %>
-
+New loan applicant
+===========================================
+		
+Applicant name: <%= @borrower.first_name %> <%= @borrower.last_name %>
+		
 Loan purpose: <%= @borrower.application.loan_purpose %>
 Property type: <%= @borrower.application.property_type %>
+Zip: <%= @borrower.application.zip_code %>
+Budget: <%= @borrower.application.budget %>
+Credit score: <%= @borrower.credit_score %>
+
+Contact information
+
+Email: <%= @borrower.email %>
+Phone: <%= @borrower.phone %>
+
+		
+View the rest of the data in Google Docs:
+https://docs.google.com/spreadsheets/d/13L7-_UACtzqvIukzx14qNoDPe1zdwkBZDQxOhQL2XtY/edit?usp=sharing
