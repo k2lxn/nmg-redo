@@ -1,15 +1,17 @@
 <% provide(:title, "Thank you!") %>
-<div class="center-wrap clear-nav">
 
-<h2>Thanks! Your application has been submitted</h2>
+<div class="wrapper">
+<div class="container-fluid clear-nav">
 
-<h3>You will receive a confirmation email shortly</h3>
+	<h2>Thanks! Your application has been submitted</h2>
 
-<%= link_to "Home", root_path %>
+	<h3>You will receive a confirmation email shortly</h3>
 
+	<%= link_to "Home", root_path %>
+
+	<!-- DEBUG --> 
+
+	<%= debug(params) %>
+	
 </div>
-
-
-<!-- DEBUG --> 
-
-<%= debug(params) %>
+</div>
