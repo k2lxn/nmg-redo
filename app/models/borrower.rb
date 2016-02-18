@@ -19,7 +19,17 @@ class Borrower < ActiveRecord::Base
 	def save_application
 		# Create session. Prompts credential via command line the first time, 
 		# then saves to given file for later usage
-		session = GoogleDrive.saved_session("config.json")
+		#session = GoogleDrive.saved_session("config.json")
+		client = Google::APIClient.new
+		auth = client.authorization
+		auth.client_id = ENV["google_client_id"]
+		auth.client_secret = ENV["google_client_secret"]
+		auth.scope = "https://www.googleapis.com/auth/drive" +
+    "https://spreadsheets.google.com/feeds/"
+    auth.redirect_uri = "http://example.com/redirect"
+    auth.refresh_token = ENV["google_refresh_token"]
+    auth.fetch_access_token!
+    session = GoogleDrive.login_with_oauth(auth.access_token)
 		
 		# Get worksheet from spreadsheet
 		loan_ws = session.spreadsheet_by_key("13L7-_UACtzqvIukzx14qNoDPe1zdwkBZDQxOhQL2XtY").worksheets[0]
