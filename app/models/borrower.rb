@@ -19,8 +19,7 @@ class Borrower < ActiveRecord::Base
 	def save_application
 		# Create session. Prompts credential via command line the first time, 
 		# then saves to given file for later usage
-		#session = GoogleDrive.saved_session("config.json")
-		session = GoogleDrive.saved_session(path = nil, proxy = ENV["http_proxy"], client_id = ENV["google_client_id"], client_secret = ENV["google_client_secret"])
+		session = GoogleDrive.saved_session("config.json")
 		
 		# Get worksheet from spreadsheet
 		loan_ws = session.spreadsheet_by_key("13L7-_UACtzqvIukzx14qNoDPe1zdwkBZDQxOhQL2XtY").worksheets[0]
