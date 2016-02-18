@@ -24,7 +24,9 @@
 			</ul>
 		</p>
 		
-		<p> View the data in <a href="https://docs.google.com/spreadsheets/d/13L7-_UACtzqvIukzx14qNoDPe1zdwkBZDQxOhQL2XtY/edit?usp=sharing">Google Docs ></a>
+		<p> View the data in <%= link_to "Google Docs", "http://docs.google.com/spreadsheets/d/#{ENV["spreadsheet_key"]}", target: "_blank" %>
+		
+		
 		</p>
   </body>
 </html>
