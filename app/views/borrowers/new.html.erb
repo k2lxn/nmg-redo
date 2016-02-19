@@ -38,9 +38,12 @@
 				</div>
 			</div> <!-- end .row -->
 			<div class="row">	
-				<div class="form-group col-sm-3">
+				<div class="form-group col-xs-6 col-sm-3">
 					<%= ff.label :zip_code %>
-					<%= ff.text_field :zip_code, class: 'form-control', style: 'max-width:120px;' %>
+					<%= ff.text_field :zip_code, class: 'form-control', style: 'max-width:120px;', 'aria-describedby': 'loan_zipcode_description' %>
+				</div>
+				<div class="col-xs-6 form_field_label">
+					<small id="loan_zipcode_description">* Nationwide services are currently available in CA, NV, OR, TX and WA</small>
 				</div>
 			</div> <!-- end .row -->
 			<%end%>  <!-- end fields_for :application -->
@@ -119,7 +122,7 @@
 			<div class="row">
 				<div class="form-group col-sm-6">
 					<%= f.label :income, "Est. gross yearly income" %>
-					<%= f.text_field :income, placeholder: "$", class: 'form-control' %>
+					<%= f.text_field :income, placeholder: "$", class: 'form-control', 'aria-describedby': 'income_description' %>
 				</div>
 			
 				<div class="form-group col-sm-6">
@@ -127,17 +130,34 @@
 					<%= f.text_field :monthly_debt, placeholder: "$", class: 'form-control' %>
 				</div>
 			</div> <!-- end .row -->
-		
+			
+			<div class="row">
+				<div class="col-sm-8 form_field_label">
+					<small id="income_description">
+						Notice: Alimony, child support, or separate maintenance income 
+						need not be revealed if the Borrower ro Co-Borrower does not 
+						choose to have it considered for repaying this loan.
+					</small>
+				</div>
+			</div> <!-- end .row -->
+			
 			<div class="row">
 				<div class="form-group col-sm-6">
 					<%= f.label :employer, "Current employer" %>
 					<%= f.text_field :employer, class: 'form-control' %>
 				</div>
 			
-				<div class="form-group col-xs-3 col-sm-2">
+				<div class="form-group col-xs-6 col-sm-2">
 					<%= f.label :employed_since, "Since" %>
-					<%= f.text_field :employed_since, placeholder: "YYYY", class: 'form-control' %>		
+					<%= f.text_field :employed_since, placeholder: "YYYY", class: 'form-control', style: 'max-width:120px;', 'aria-describedby': 'current_employer_description' %>		
 				</div>	
+				
+				<div class="col-sm-6 form_field_label">
+					<small id="current_employer_description">
+						* Self-employed Borrowers may be required to provide additional 
+						documentation such as tax returns and financial statements.
+					</small>
+				</div>
 			</div> <!-- end .row -->
 			
 		</fieldset>
