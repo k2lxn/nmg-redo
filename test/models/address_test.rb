@@ -35,8 +35,9 @@ class AddressTest < ActiveSupport::TestCase
   	assert_not @address.valid?
   end
   
-  test "zip code should be numerical" do
-  	@address.zip_code = "A94151"
+  test "zip code should only contain digits (0 - 9)" do # not numerical (can start with 0)
+  	@address.zip_code = "A9415"
   	assert_not @address.valid?
   end
+
 end
