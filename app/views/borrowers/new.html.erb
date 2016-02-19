@@ -7,9 +7,10 @@
 	
 	<span class='accent-border'>&nbsp</span>
 	
-	<%= render 'shared/error_messages' %>
 	<%= form_for @borrower, url: {action: "create"} do |f| %>
 	
+		<%= render 'shared/error_messages', object: f.object %>
+		
 		<fieldset class="container">
 			<legend>Home information</legend>
 			<%= f.fields_for :application do |ff| %>

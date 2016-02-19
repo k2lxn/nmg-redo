@@ -13,6 +13,9 @@ $light-grey: #EEE;
 $medium-grey: #AAA;
 $dark-grey: #555;
 
+$error-text-color: rgb(250,0,0);
+$error-background-color: rgba(230,0,0, 0.8);
+
 $base-line-height: 1.33em;
 $global-padding: $base-line-height/2;
 $nav-height: 3.750em;
@@ -86,7 +89,7 @@ p#hero-phone {
 	color: $dark-grey;
 	padding: 15px;
 }
-@media only screen and (min-width: 768px) { // ie. @screen-sm (bootstrap)
+@media only screen and (min-width: $screen-sm) { // ie. @screen-sm (bootstrap)
 	p#hero-phone {
 		text-align: right;
 		margin-right: 15px;
@@ -124,7 +127,7 @@ small {
 		font-size: 1.25em;
 	}	
 }
-@media only screen and (min-width: 768px) {  
+@media only screen and (min-width: $screen-sm) {  
 	.nav li a {
 		font-size: 1em;
 	}
@@ -181,9 +184,6 @@ body {
 	padding-top: $nav-height;
 }
 
-//h1 {
-//	margin-bottom: $base-line-height;
-//}
 h2 {
 	margin-top: 0px;
 	margin-bottom: 5px;
@@ -221,7 +221,7 @@ img {
 .img-center {
 	margin: 0 auto;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $screen-sm) {
 	.img-sm {
 		max-height: 7.5em;
 	}
@@ -236,6 +236,11 @@ img {
 .vert-center {
 	vertical-align: middle;
 }
+.alert-danger {
+	color: #FFF;
+	background-color: $error-background-color;
+}
+
 section {
 	//display: block;
 	//float: left;
@@ -293,7 +298,7 @@ nav {
 .td {
 	display: table-cell;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $screen-sm) {
 	.table, .tr, .td {
 		display: block;
 	}
@@ -348,7 +353,7 @@ p:link {
 	background-color: #fff;
 	border: none;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $screen-sm) {
 	nav ul {
 		width: 100%;
 		li {
@@ -384,12 +389,12 @@ p:link {
 	position: absolute;
 	top: 0;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $screen-sm) {
 	#hero-phone {
 		z-index: 200;
 	}
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $screen-sm) {
 	#home .table {
 		margin-top: 30px;
 	}
@@ -398,7 +403,7 @@ p:link {
 	padding: 0 15px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $screen-sm) {
 	#hero-logo {
 		width: 40em;
 		position: relative;
@@ -446,7 +451,7 @@ p:link {
 .pitch:first-of-type {
 	border-top: none;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $screen-sm) {
 	.pitch {
 		h2 {
 			font-size: 1.5em;
@@ -577,7 +582,7 @@ footer {
 		}
 	}	
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $screen-sm) {
 	footer {
 		.col-sm-6:nth-of-type(2) {
 			text-align: right;
@@ -671,7 +676,7 @@ footer {
 			left: -90px;
 		}
 	}
-	@media only screen and (min-width: 768px) {
+	@media only screen and (min-width: $screen-sm) {
 		#loan_zipcode_description {
 			left: -50px;
 		}
@@ -684,7 +689,7 @@ form {
 		margin-bottom: 20px;
 	}
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $screen-sm) {
 	form {
 		max-width: 480px;
 		margin-left: auto;
@@ -706,7 +711,7 @@ form label, .form-label {
 fieldset {
 	max-width: 750px;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $screen-sm) {
 	fieldset {
 		max-width: 460px;
 	}	
@@ -717,7 +722,7 @@ fieldset {
 	position: relative;
 	top: 40px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $screen-sm) {
 	#borrower_address_state {
 		position: relative;
 		top: -40px;
@@ -736,7 +741,7 @@ fieldset {
 .radio label {
 	margin-left: $global-padding;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $screen-sm) {
 	.radio + .radio {
 		margin-top: 10px;
 	}
@@ -745,6 +750,23 @@ input[type="submit"].form-control {
 	height: 50px;
   padding: 0;
   margin-top: 20px;
+}
+
+
+#error_explanation {
+	text-align: center;
+	ul {
+		margin: 0 auto;
+		list-style-type: disc;
+		font-size: $px-18;
+	}
+}
+.field_with_errors {
+	@extend .has-error;
+	color: $error-text-color;
+	.form-control {
+		border-color: $error-text-color;
+	}
 }
 
 
