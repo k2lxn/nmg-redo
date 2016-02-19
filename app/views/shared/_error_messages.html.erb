@@ -3,9 +3,12 @@
     <div class="alert alert-danger">
       The form contains <%= pluralize(object.errors.count, "error") %>.
     </div>
+    <p>Fields in red cannot be left blank</p>
     <ul>
     <% object.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+			<% unless msg.end_with?("can't be blank") %>
+				<li><%= msg %></li>
+			<%end%>
     <% end %>
     </ul>
   </div>
