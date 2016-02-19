@@ -113,6 +113,9 @@ a:hover {
 a.button-style:hover {
 	color: #FFF;
 }
+small {
+	font-size: 0.8em;
+}
 .nav {
 	ul {
 		font-size: $px-16;
@@ -643,6 +646,35 @@ footer {
 	h1 {
 		text-align: center;
 		margin-top: 50px;
+	}
+	small {
+		display: block;
+	}
+	.form_field_label {
+		margin-bottom: 10px;
+	}
+	#loan_zipcode_description {
+		position: relative;
+		top: 26px;
+	}
+	#income_description {
+		position: relative;
+		top: -12px;
+	}
+	#current_employer_description {
+		position: relative;
+		top: -12px;
+
+	}
+	@media only screen and (min-width: 460px) {
+		#loan_zipcode_description {
+			left: -90px;
+		}
+	}
+	@media only screen and (min-width: 768px) {
+		#loan_zipcode_description {
+			left: -50px;
+		}
 	}
 }
 form {

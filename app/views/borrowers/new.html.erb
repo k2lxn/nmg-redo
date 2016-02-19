@@ -132,10 +132,10 @@
 			</div> <!-- end .row -->
 			
 			<div class="row">
-				<div class="col-sm-8 form_field_label">
+				<div class="col-sm-6 form_field_label">
 					<small id="income_description">
 						Notice: Alimony, child support, or separate maintenance income 
-						need not be revealed if the Borrower ro Co-Borrower does not 
+						need not be revealed if the Borrower or Co-Borrower does not 
 						choose to have it considered for repaying this loan.
 					</small>
 				</div>
@@ -147,12 +147,12 @@
 					<%= f.text_field :employer, class: 'form-control' %>
 				</div>
 			
-				<div class="form-group col-xs-6 col-sm-2">
+				<div class="form-group col-xs-5 col-sm-2">
 					<%= f.label :employed_since, "Since" %>
 					<%= f.text_field :employed_since, placeholder: "YYYY", class: 'form-control', style: 'max-width:120px;', 'aria-describedby': 'current_employer_description' %>		
 				</div>	
 				
-				<div class="col-sm-6 form_field_label">
+				<div class="col-xs-7 form_field_label">
 					<small id="current_employer_description">
 						* Self-employed Borrowers may be required to provide additional 
 						documentation such as tax returns and financial statements.
