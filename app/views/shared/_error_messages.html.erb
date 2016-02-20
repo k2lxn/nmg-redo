@@ -4,12 +4,16 @@
       The form contains <%= pluralize(object.errors.count, "error") %>.
     </div>
     <p>Fields in red cannot be left blank</p>
+    
     <ul>
-    <% object.errors.full_messages.each do |msg| %>
-			<% unless msg.end_with?("can't be blank") %>
-				<li><%= msg %></li>
-			<%end%>
-    <% end %>
+    <% fields_with_errors = object.errors.keys %>
+    <% fields_with_errors.each do |field| %>
+    	<% object.errors[field].each do |msg| %>
+    		<% unless msg == "can't be blank" %>
+    			<li><%= msg %></li>
+    		<%end%>	
+    	<%end%>
+    <%end%>
     </ul>
   </div>
 <% end %>
