@@ -4,7 +4,7 @@ class ApplicationTest < ActiveSupport::TestCase
   def setup 
   	@application = Application.new( loan_purpose: "purchase",property_type: "primary",
   																purchase_price: 500000,budget: 20000,zip_code: "94110")  	
-  	@valid_dollar_amounts = ["10,500.00", "350000", "$1,000,000"]
+  	@valid_dollar_amounts = ["10,500.00", "350000", "$1,000,000", "200", "$500,000"]
   	@invalid_dollar_amounts = ["100.500.00", "1500,00", "140 000 00", "A3400", "#500"]
   end
   
@@ -49,6 +49,13 @@ class ApplicationTest < ActiveSupport::TestCase
 	end
 	
 	test "budget should be in valid USD format" do 
-	
+		@valid_dollar_amounts.length.times do |n|
+			@application.budget = @valid_dollar_amounts[n]
+			assert @application.valid?, "#{@valid_dollar_amounts[n]} should be valid"
+		end
+		@invalid_dollar_amounts.length.times do |n|
+			@application.budget = @invalid_dollar_amounts[n]
+			assert_not @application.valid?, "#{@invalid_dollar_amounts[n]} should be invalid"
+		end
 	end
 end
