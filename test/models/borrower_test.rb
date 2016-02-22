@@ -4,21 +4,23 @@ class BorrowerTest < ActiveSupport::TestCase
   
   def setup												
   	@borrower = Borrower.new( first_name: "Example",last_name: "Borrower",
-  														email: "user@example.com",credit_score: 720 )
+  														email: "user8@example.com",credit_score: 720 )
   	address = Address.new( street_1: "123 Fake St",city: "Washington D.C.",state: "MD",
   													zip_code: "20004")
   	application = Application.new( loan_purpose: "purchase",property_type: "primary",
-  																purchase_price: 500000,budget: 20000,zip_code: "94110")  	
+  																purchase_price: "500000",budget: "20000",zip_code: "94110")  	
   	@borrower.address = address
   	@borrower.application = application
 		@valid_first_names = ["Ms. Jan", "Brett", "Síobhan"]
 		@valid_last_names = ["Levinson-Gould", "d'Arras-d'Haudracey", "O'Malley"]
 		@invalid_first_names = ["N4am3", "FA!L", "http:", "{"] 
 		@invalid_last_names = ["w1th Numb3r5", "mal(ic,ous)", "//www.evil.com", ")"]
+		@valid_dollar_amounts = ["10,500.00", "350000", "$1,000,000", "200", "$500,000"]
+  	@invalid_dollar_amounts = ["100.500.00", "1500,00", "140 000 00", "A3400", "#500"]
   end
   
   test "should be valid" do
-  	assert @borrower.valid?
+  	assert @borrower.valid?, "#{@borrower.errors.full_messages}"
   end
   
   test "first name should be present" do
@@ -53,14 +55,14 @@ class BorrowerTest < ActiveSupport::TestCase
   
   test "first name should not contain any special characters" do
   	@valid_first_names.length.times do |n|
-  		@borrower.first_name = @valid_first_names[n - 1]
-  		@borrower.last_name = @valid_last_names[n - 1]
-  		assert @borrower.valid?
+  		@borrower.first_name = @valid_first_names[n]
+  		@borrower.last_name = @valid_last_names[n]
+  		assert @borrower.valid?, "#{@borrower.first_name} #{@borrower.last_name} should be valid"
   	end
   	@invalid_first_names.length.times do |n|
-  		@borrower.first_name = @invalid_first_names[n - 1]
-  		@borrower.last_name = @invalid_last_names[n - 1]
-  		assert @borrower.invalid?, "Name should not validate"
+  		@borrower.first_name = @invalid_first_names[n]
+  		@borrower.last_name = @invalid_last_names[n]
+  		assert @borrower.invalid?, "#{@borrower.first_name} #{@borrower.last_name} should not validate"
   	end
   end
   
@@ -72,7 +74,7 @@ class BorrowerTest < ActiveSupport::TestCase
   end
   
   test "email validation should accept valid addresses" do
-  	valid_addresses = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org
+  	valid_addresses = %w[user55@example.com USER@foo.COM A_US-ER@foo.bar.org
                          first.last@foo.jp alice+bob@baz.cn]
     valid_addresses.each do |valid_address|
       @borrower.email = valid_address
@@ -101,4 +103,14 @@ class BorrowerTest < ActiveSupport::TestCase
   	assert_not @borrower.valid?, "#{@borrower.credit_score} should be invalid"
   end
   
+  test "income should be in valid USD format" do 
+		@valid_dollar_amounts.length.times do |n|
+			@borrower.income = @valid_dollar_amounts[n]
+			assert @borrower.valid?, "#{@valid_dollar_amounts[n]} should be valid"
+		end
+		@invalid_dollar_amounts.length.times do |n|
+			@borrower.income = @invalid_dollar_amounts[n]
+			assert_not @borrower.valid?, "#{@invalid_dollar_amounts[n]} should be invalid"
+		end
+	end
 end
