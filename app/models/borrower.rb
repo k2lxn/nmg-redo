@@ -6,6 +6,7 @@ class Borrower < ActiveRecord::Base
 	SPECIAL_CHARS_REGEX = /\A[^0-9!@#%&*+_=<>#{Regexp.escape('\$^/(){};:')}]+\z/
 	DOLLAR_AMOUNT_REGEX = /\A(\$)?(\d{1,3})((,)?\d{3})*(\.\d{2})?\Z/
 	PHONE_REGEX = /\A(\d{3})(-)?(\d{3})(-)?(\d{4})\Z/
+	YEAR_REGEX = /\A(19|20)(\d{2})\Z/
 	validates :first_name, presence: true, length: { maximum: 35, message: "First name must be under 35 characters" }, format: { with: SPECIAL_CHARS_REGEX, message: "Invalid First Name" } 
 	validates :last_name, presence: true, length: { maximum: 45, message: "Last name must be under 45 characters" }, format: { with: SPECIAL_CHARS_REGEX, message: "Invalid Last Name" } 	
 	validates :email, presence: true, length: { maximum: 255, message: "Email address must be less than 255 characters" }, 
@@ -16,6 +17,7 @@ class Borrower < ActiveRecord::Base
 	validates :monthly_debt, format: { with: DOLLAR_AMOUNT_REGEX, message: "Please enter your Monthly debt in U.S. Dollars", allow_blank: true }
 	validates :phone, format: { with: PHONE_REGEX, message: "Enter your phone number in the format 555-123-4567", allow_blank: true }
 	validates :employer, format: { with: SPECIAL_CHARS_REGEX, message: "Employer cannot contain special characters", allow_blank: true}
+	validates :employed_since, format: { with: YEAR_REGEX, message: "Invalid year; use YYYY format", allow_blank: true }
 	
 	has_one :application
 	has_one :address

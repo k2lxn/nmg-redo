@@ -117,5 +117,27 @@ class BorrowerTest < ActiveSupport::TestCase
 	test "phone number should be in valid format" do 
 		valid_phone_numbers = ["650-555-8934","6505435555","415-1234576"]
 		invalid_phone_numbers = ["(610)-555-8934","543-5555","4!5-1234-576"]
+		valid_phone_numbers.each do |num|
+			@borrower.phone = num
+			assert @borrower.valid?, "#{num.inspect} should be valid"
+		end
+		invalid_phone_numbers.each do |num|
+			@borrower.phone = num
+			assert_not @borrower.valid?, "#{num.inspect} should be invalid"
+		end
 	end
+	
+	test "employed_since should be a valid year" do
+		valid_years = ["1999", "2010", "2016", "1920"]
+		invalid_years = ["19o1", "83", "1820"]
+		valid_years.each do |yr|
+			@borrower.employed_since = yr
+			assert @borrower.valid?, "#{yr.inspect} should be valid"
+		end
+		invalid_years.each do |yr|
+			@borrower.employed_since = yr
+			assert_not @borrower.valid?, "#{yr.inspect} should be invalid"
+		end
+	end
+	
 end
