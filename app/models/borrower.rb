@@ -5,9 +5,9 @@ class Borrower < ActiveRecord::Base
 	validates :first_name, presence: true, length: { maximum: 35 } 
 	validates :last_name, presence: true, length: { maximum: 45 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	validates :email, presence: true, length: { maximum: 255 }, 
-										format: { with: VALID_EMAIL_REGEX },
-										uniqueness: { case_sensitive: false }
+	validates :email, presence: true, length: { maximum: 255, message: "Sorry, your email address must be less than 255 characters" }, 
+										format: { with: VALID_EMAIL_REGEX, message: "Please enter a valid email address" },
+										uniqueness: { case_sensitive: false, message: "Email address has already been taken" }
 	validates :credit_score, presence: true, numericality: { only_integer: true }
 	
 	has_one :application

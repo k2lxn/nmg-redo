@@ -48,8 +48,10 @@ class BorrowerTest < ActiveSupport::TestCase
   end
   
   test "email should not be too long" do 
-  	@borrower.email = "a" * 244 + "@example.com"
+  	@borrower.email = "a" * 255 + "@example.com"
   	assert_not @borrower.valid?
+  	@borrower.save
+  	assert_equal @borrower.errors[:email], ["Sorry, your email address must be less than 255 characters"]
   end
   
   test "email validation should accept valid addresses" do
