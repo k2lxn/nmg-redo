@@ -113,4 +113,9 @@ class BorrowerTest < ActiveSupport::TestCase
 			assert_not @borrower.valid?, "#{@invalid_dollar_amounts[n]} should be invalid"
 		end
 	end
+	
+	test "phone number should be in valid format" do 
+		valid_phone_numbers = ["650-555-8934","6505435555","415-1234576"]
+		invalid_phone_numbers = ["(610)-555-8934","543-5555","4!5-1234-576"]
+	end
 end

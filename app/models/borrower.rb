@@ -5,15 +5,16 @@ class Borrower < ActiveRecord::Base
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	SPECIAL_CHARS_REGEX = /\A[^0-9!@#%&*+_=<>#{Regexp.escape('\$^/(){};:')}]+\z/
 	DOLLAR_AMOUNT_REGEX = /\A(\$)?(\d{1,3})((,)?\d{3})*(\.\d{2})?\Z/
+	PHONE_REGEX = /\A(\d{3})(-)?(\d{3})(-)?(\d{4})\Z/
 	validates :first_name, presence: true, length: { maximum: 35, message: "First name must be under 35 characters" }, format: { with: SPECIAL_CHARS_REGEX, message: "Invalid First Name" } 
 	validates :last_name, presence: true, length: { maximum: 45, message: "Last name must be under 45 characters" }, format: { with: SPECIAL_CHARS_REGEX, message: "Invalid Last Name" } 	
 	validates :email, presence: true, length: { maximum: 255, message: "Email address must be less than 255 characters" }, 
 										format: { with: VALID_EMAIL_REGEX, message: "Please enter a valid email address" },
 										uniqueness: { case_sensitive: false, message: "Email address has already been taken" }
 	validates :credit_score, presence: true, numericality: { only_integer: true }
-	
 	validates :income, format: { with: DOLLAR_AMOUNT_REGEX, message: "Please enter your Income in U.S. Dollars", allow_blank: true } 
 	validates :monthly_debt, format: { with: DOLLAR_AMOUNT_REGEX, message: "Please enter your Monthly debt in U.S. Dollars", allow_blank: true }
+	validates :phone, format: { with: PHONE_REGEX, message: "Enter your phone number in the format 555-123-4567", allow_blank: true }
 
 	
 	has_one :application
