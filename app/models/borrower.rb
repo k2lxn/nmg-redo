@@ -15,7 +15,7 @@ class Borrower < ActiveRecord::Base
 	validates :income, format: { with: DOLLAR_AMOUNT_REGEX, message: "Please enter your Income in U.S. Dollars", allow_blank: true } 
 	validates :monthly_debt, format: { with: DOLLAR_AMOUNT_REGEX, message: "Please enter your Monthly debt in U.S. Dollars", allow_blank: true }
 	validates :phone, format: { with: PHONE_REGEX, message: "Enter your phone number in the format 555-123-4567", allow_blank: true }
-
+	validates :employer, format: { with: SPECIAL_CHARS_REGEX, message: "Employer cannot contain special characters", allow_blank: true}
 	
 	has_one :application
 	has_one :address
