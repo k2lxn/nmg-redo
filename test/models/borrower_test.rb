@@ -11,6 +11,10 @@ class BorrowerTest < ActiveSupport::TestCase
   																purchase_price: 500000,budget: 20000,zip_code: "94110")  	
   	@borrower.address = address
   	@borrower.application = application
+		@valid_first_names = ["Ms. Jan", "Brett", "Síobhan"]
+		@valid_last_names = ["Levinson-Gould", "d'Arras-d'Haudracey", "O'Malley"]
+		@invalid_first_names = ["N4am3", "FA!L", "http:", "{"] 
+		@invalid_last_names = ["w1th Numb3r5", "mal(ic,ous)", "//www.evil.com", ")"]
   end
   
   test "should be valid" do
@@ -45,6 +49,19 @@ class BorrowerTest < ActiveSupport::TestCase
   test "last name should not be too long" do 
   	@borrower.last_name = "a" * 46
     assert_not @borrower.valid?
+  end
+  
+  test "first name should not contain any special characters" do
+  	@valid_first_names.length.times do |n|
+  		@borrower.first_name = @valid_first_names[n - 1]
+  		@borrower.last_name = @valid_last_names[n - 1]
+  		assert @borrower.valid?
+  	end
+  	@invalid_first_names.length.times do |n|
+  		@borrower.first_name = @invalid_first_names[n - 1]
+  		@borrower.last_name = @invalid_last_names[n - 1]
+  		assert @borrower.invalid?, "Name should not validate"
+  	end
   end
   
   test "email should not be too long" do 

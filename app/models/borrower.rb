@@ -2,9 +2,10 @@ require "google/api_client"
 require "google_drive"
 
 class Borrower < ActiveRecord::Base
-	validates :first_name, presence: true, length: { maximum: 35 } 
-	validates :last_name, presence: true, length: { maximum: 45 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+	SPECIAL_CHARS_REGEX = /\A[^0-9!@#%&*+_=<>#{Regexp.escape('$^/\(){};:')}]+\z/
+	validates :first_name, presence: true, length: { maximum: 35 }, format: { with: SPECIAL_CHARS_REGEX, message: "Invalid First Name" } 
+	validates :last_name, presence: true, length: { maximum: 45 }, format: { with: SPECIAL_CHARS_REGEX, message: "Invalid Last Name" } 	
 	validates :email, presence: true, length: { maximum: 255, message: "Sorry, your email address must be less than 255 characters" }, 
 										format: { with: VALID_EMAIL_REGEX, message: "Please enter a valid email address" },
 										uniqueness: { case_sensitive: false, message: "Email address has already been taken" }
