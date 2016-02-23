@@ -707,6 +707,7 @@ form label, .form-label {
 }
 .label-select {
 	text-align: center;
+	margin-bottom: 0;
 }
 fieldset {
 	max-width: 750px;
@@ -720,7 +721,7 @@ fieldset {
 	max-width: 200px;
 	margin: 0 auto;
 	position: relative;
-	top: 40px;
+	top: 15px;
 }
 @media only screen and (min-width: $screen-sm) {
 	#borrower_address_state {
@@ -731,7 +732,7 @@ fieldset {
 		margin-bottom: 3px;
 	}
 	#borrower_zip {
-		top: 0;
+		top: -25px;
 	}
 }
 .radio input[type="radio"] {
