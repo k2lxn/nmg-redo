@@ -1,5 +1,5 @@
 class LenderMailer < ApplicationMailer
-	default from: "alert@nationwidemtg.us", to: "jane.e.reynolds@gmail.com"
+	default from: "alert@nationwidemtg.us", to: "george@nationwidemtg.us"
 	
 	def lead_alert(borrower)
 		@borrower = borrower
